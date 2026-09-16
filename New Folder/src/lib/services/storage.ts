@@ -24,8 +24,9 @@ export async function uploadImage(file: File): Promise<string> {
         });
         resolve(result.url || base64Data);
       } catch (error) {
-        // Fallback to Base64 data URL if API call fails
-        resolve(reader.result as string);
+        // Stop silently falling back to base64 so we can see the real error in the UI
+        console.error('Image upload API failed:', error);
+        reject(error);
       }
     };
     reader.onerror = () => reject(new Error('Failed to read file'));

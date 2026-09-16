@@ -170,7 +170,9 @@ export const AdminDashboardView: React.FC = () => {
     const colorsArr = productForm.colors.split(',').map((s) => s.trim()).filter(Boolean);
     const sizesArr = productForm.sizes.split(',').map((s) => s.trim()).filter(Boolean);
     const specsArr = productForm.materialSpecs.split(',').map((s) => s.trim()).filter(Boolean);
-    const imagesArr = productForm.images.split(',').map((s) => s.trim()).filter(Boolean);
+    
+    // Split by comma+space so we don't accidentally split base64 strings in half
+    const imagesArr = productForm.images.split(', ').map((s) => s.trim()).filter(Boolean);
 
     const payload = {
       name: productForm.name,
