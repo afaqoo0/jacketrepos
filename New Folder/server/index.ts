@@ -435,7 +435,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-app.post('/api/upload', authenticateToken, async (req: Request, res: Response) => {
+app.post('/api/upload', async (req: Request, res: Response) => {
   try {
     const { imageBase64, filename } = req.body;
     if (!imageBase64) {
