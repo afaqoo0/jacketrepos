@@ -68,7 +68,7 @@ export const AdminDashboardView: React.FC = () => {
     sizes: 'S (EU 35-38), M (EU 39-42), L (EU 43-46)',
     materialSpecs: '68% Combed Cotton, 22% Nylon, 10% Elastane',
     gripPattern: 'Hexagonal Pod Matrix',
-    images: '/images/socks_white.jpg',
+    images: [] as string[],
     status: 'active' as Product['status'],
     featured: true,
   });
@@ -99,14 +99,16 @@ export const AdminDashboardView: React.FC = () => {
 
     const { url, error } = await uploadFile('product-images', file);
     if (error) {
-      setUploadError(error.message || 'Image upload failed');
+      setUploadError(error.message || 'Image upload failed. Check Cloudinary env vars on Render.');
     } else if (url) {
       setProductForm((prev) => ({
         ...prev,
-        images: prev.images ? `${prev.images}, ${url}` : url,
+        images: [...prev.images, url],
       }));
     }
     setUploadingImage(false);
+    // reset file input so same file can be re-uploaded if needed
+    e.target.value = '';
   };
 
   const handleBlogImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -140,7 +142,7 @@ export const AdminDashboardView: React.FC = () => {
         sizes: product.sizes.join(', '),
         materialSpecs: product.materialSpecs.join(', '),
         gripPattern: product.gripPattern,
-        images: product.images.join(', '),
+        images: [...product.images], // use the actual array
         status: product.status,
         featured: product.featured,
       });
@@ -157,7 +159,7 @@ export const AdminDashboardView: React.FC = () => {
         sizes: 'S (EU 35-38), M (EU 39-42), L (EU 43-46)',
         materialSpecs: '68% Combed Cotton, 22% Nylon, 10% Elastane',
         gripPattern: 'Dual-Density Silicone Pod Matrix',
-        images: '/images/socks_white.jpg',
+        images: [],
         status: 'active',
         featured: true,
       });
@@ -170,9 +172,6 @@ export const AdminDashboardView: React.FC = () => {
     const colorsArr = productForm.colors.split(',').map((s) => s.trim()).filter(Boolean);
     const sizesArr = productForm.sizes.split(',').map((s) => s.trim()).filter(Boolean);
     const specsArr = productForm.materialSpecs.split(',').map((s) => s.trim()).filter(Boolean);
-    
-    // Split by comma+space so we don't accidentally split base64 strings in half
-    const imagesArr = productForm.images.split(', ').map((s) => s.trim()).filter(Boolean);
 
     const payload = {
       name: productForm.name,
@@ -186,7 +185,7 @@ export const AdminDashboardView: React.FC = () => {
       sizes: sizesArr,
       materialSpecs: specsArr,
       gripPattern: productForm.gripPattern,
-      images: imagesArr.length > 0 ? imagesArr : ['/images/socks_white.jpg'],
+      images: productForm.images.length > 0 ? productForm.images : [],
       status: productForm.status,
       featured: productForm.featured,
     };
@@ -699,15 +698,49 @@ export const AdminDashboardView: React.FC = () => {
 
               {/* Image Upload Field */}
               <div>
-                <label className="block font-bold text-slate-300 uppercase mb-1">Product Images (Upload or URLs)</label>
-                <div className="flex items-center space-x-3 mb-2">
-                  <label className="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs flex items-center space-x-1.5 cursor-pointer border border-slate-700">
+                <label className="block font-bold text-slate-300 uppercase mb-1">
+                  Product Images ({productForm.images.length} uploaded — unlimited)
+                </label>
+
+                {/* Thumbnail Preview Grid */}
+                {productForm.images.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {productForm.images.map((img, idx) => (
+                      <div key={idx} className="relative group w-20 h-20 flex-shrink-0">
+                        <img
+                          src={img}
+                          alt={`img-${idx}`}
+                          className="w-full h-full object-cover rounded-xl border border-slate-700"
+                          onError={(e) => { (e.target as HTMLImageElement).src = '/images/socks_white.jpg'; }}
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setProductForm((prev) => ({
+                            ...prev,
+                            images: prev.images.filter((_, i) => i !== idx),
+                          }))}
+                          className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-rose-500 text-white text-xs flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity font-bold"
+                          title="Remove image"
+                        >
+                          ×
+                        </button>
+                        {idx === 0 && (
+                          <span className="absolute bottom-0 left-0 right-0 text-[9px] text-center bg-lime-400 text-slate-950 font-bold rounded-b-xl">MAIN</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Upload Button */}
+                <div className="flex items-center space-x-3">
+                  <label className={`px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs flex items-center space-x-1.5 cursor-pointer border border-slate-700 ${uploadingImage ? 'opacity-60 cursor-not-allowed' : ''}`}>
                     {uploadingImage ? (
                       <Loader2 className="w-4 h-4 animate-spin text-lime-400" />
                     ) : (
                       <Upload className="w-4 h-4 text-lime-400" />
                     )}
-                    <span>Upload Image to Storage</span>
+                    <span>{uploadingImage ? 'Uploading...' : '+ Add Image'}</span>
                     <input
                       type="file"
                       accept="image/*"
@@ -716,9 +749,8 @@ export const AdminDashboardView: React.FC = () => {
                       className="hidden"
                     />
                   </label>
-                  <span className="text-[11px] text-slate-400">Max 5MB (JPG, PNG, WebP)</span>
+                  <span className="text-[11px] text-slate-400">Max 5MB per image · No limit on count</span>
                 </div>
-                <input type="text" value={productForm.images} onChange={(e) => setProductForm({ ...productForm, images: e.target.value })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white" placeholder="https://..." />
               </div>
 
               <div className="flex items-center space-x-6 pt-2">

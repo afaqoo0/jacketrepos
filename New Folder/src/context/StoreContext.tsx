@@ -98,130 +98,7 @@ const defaultSettings: SiteSettings = {
   metaDescription: 'Leading manufacturer of elite sports grip socks, athletic compression wear, and team edition accessories.',
 };
 
-const initialProducts: Product[] = [
-  {
-    id: 'prod-1',
-    name: 'TS Sports Pro Grip Socks 2.0 - Pure White',
-    slug: 'ts-sports-pro-grip-socks-2-white',
-    SKU: 'TS-SPORTS-001-WHT',
-    description: 'Engineered for elite athletes, the TS Sports Pro Grip 2.0 features dual-density silicone pods that lock your foot inside the cleat, eliminating micro-slippage during explosive sprints, sharp cuts, and high-speed directional shifts. Constructed with breathable combed cotton and elastane compression arch support.',
-    shortDescription: 'Flagship white matchday grip socks with anti-slip silicone pod technology and arch compression.',
-    price: 24.99,
-    originalPrice: 29.99,
-    status: 'active',
-    featured: true,
-    category: 'Full Length',
-    colors: ['Pure White / Black Pods', 'Pure White / Gold Pods'],
-    sizes: ['S (EU 35-38)', 'M (EU 39-42)', 'L (EU 43-46)', 'XL (EU 47+)'],
-    materialSpecs: [
-      '68% Combed Cotton, 22% Nylon, 10% Elastane',
-      'Non-slip medical grade Silicone Pod Matrix',
-      'Ergonomic Arch Band Compression',
-      '3D Mesh Breathable Upper Instep',
-      'Double-stitched Seamless Toe Lock'
-    ],
-    gripPattern: 'Hexagonal Dual-Traction Grid',
-    images: [
-      '/images/socks_white.jpg',
-      '/images/hero.jpg'
-    ],
-    createdAt: '2026-08-01',
-  },
-  {
-    id: 'prod-2',
-    name: 'TS Sports Stealth Ankle Grip Socks - Midnight Black',
-    slug: 'ts-sports-stealth-ankle-grip-socks-black',
-    SKU: 'TS-SPORTS-002-BLK',
-    description: 'Designed for players who prefer a low-cut profile or wear leg sleeves. The Stealth Ankle Grip Socks offer low-profile ankle stability combined with high-friction silicone pads across the heel, midfoot, and forefoot to maximize power transfer into your boots.',
-    shortDescription: 'Sleek black ankle cut grip socks engineered for speed, agility, and minimal bulk.',
-    price: 22.99,
-    originalPrice: 27.99,
-    status: 'active',
-    featured: true,
-    category: 'Ankle Cut',
-    colors: ['Midnight Black / White Pods', 'All Black Stealth'],
-    sizes: ['S (EU 35-38)', 'M (EU 39-42)', 'L (EU 43-46)'],
-    materialSpecs: [
-      '70% Combed Cotton, 20% Nylon, 10% Spandex',
-      'Targeted Ankle Collar Reinforcement',
-      'High-Friction Silicone Sole Grid',
-      'Anti-Blister Cushion Heel'
-    ],
-    gripPattern: 'Diamond Pod Stability Array',
-    images: [
-      '/images/socks_black.jpg',
-      '/images/hero.jpg'
-    ],
-    createdAt: '2026-08-05',
-  }
-];
-
-const initialShowrooms: Showroom[] = [
-  {
-    id: 'sr-1',
-    name: 'TS Sports Digital Showroom Online',
-    address: 'Official 3D Interactive Virtual Showroom Platform',
-    city: 'Online Worldwide',
-    country: 'Digital Global Hub',
-    phone: '03085410293',
-    hours: 'Available 24/7 Online | Instant WhatsApp Assistance',
-    mapUrl: 'https://wa.me/923085410293',
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108420.73278839211!2d74.4578135!3d32.492482!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391eea5674c0c7eb%3A0xe543e264627d3b25!2sSialkot%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk',
-    isActive: true,
-  }
-];
-
-const initialLeadership: Leadership[] = [
-  {
-    id: 'lead-1',
-    name: 'Kashif Tufail',
-    designation: 'Chief Executive Officer & Founder',
-    bio: 'Visionary founder and CEO of TS Sports. Kashif Tufail leads the brand in pioneering high-performance athletic apparel, precision grip gear, and global sporting goods innovation.',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
-    displayOrder: 1,
-    linkedIn: 'https://linkedin.com',
-  }
-];
-
-const initialSuppliers: Supplier[] = [
-  {
-    id: 'sup-1',
-    name: 'SilicoGrip Labs',
-    logo: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&q=80',
-    category: 'Silicone Traction Technology',
-    location: 'Munich, Germany',
-    website: 'https://silicogrip-labs.de',
-    description: 'Supplies medical-grade non-slip silicone compounds engineered specifically for high-torque athletic foot movement.',
-  }
-];
-
-const initialBlogs: Blog[] = [
-  {
-    id: 'blog-1',
-    title: 'Why Professional Athletes Wear TS Sports Performance Grip Socks',
-    slug: 'why-professional-athletes-wear-ts-sports-grip-socks',
-    summary: 'Discover how TS Sports grip socks eliminate foot slippage inside boots and maximize agility for matchday dominance.',
-    content: 'TS Sports incorporates high-tack silicone pod matrices directly onto high-impact sole zones.',
-    image: '/images/hero.jpg',
-    author: 'Kashif Tufail',
-    category: 'Sports Science',
-    status: 'published',
-    publishedAt: '2026-08-30',
-  }
-];
-
-const initialInquiries: Inquiry[] = [
-  {
-    id: 'inq-1',
-    name: 'Team Manager Hassan',
-    email: 'hassan@sportsclub.com',
-    phone: '03085410293',
-    subject: 'Bulk Custom Team Order',
-    message: 'Hello TS Sports team, we would like to order 50 pairs of TS Sports Pro Grip Socks for our academy squad.',
-    status: 'new',
-    createdAt: '2026-08-30',
-  }
-];
+// All data is loaded from the database. No dummy/fallback data.
 
 const StoreContext = createContext<StoreContextType | undefined>(undefined);
 
@@ -244,12 +121,12 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [adminUser, setAdminUser] = useState<string | null>(authService.getAdminSessionToken() ? 'Admin' : null);
 
   // Data Collections
-  const [products, setProducts] = useState<Product[]>(initialProducts);
-  const [blogs, setBlogs] = useState<Blog[]>(initialBlogs);
-  const [showrooms, setShowrooms] = useState<Showroom[]>(initialShowrooms);
-  const [leadership, setLeadership] = useState<Leadership[]>(initialLeadership);
-  const [suppliers, setSuppliers] = useState<Supplier[]>(initialSuppliers);
-  const [inquiries, setInquiries] = useState<Inquiry[]>(initialInquiries);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [showrooms, setShowrooms] = useState<Showroom[]>([]);
+  const [leadership, setLeadership] = useState<Leadership[]>([]);
+  const [suppliers, setSuppliers] = useState<Supplier[]>([]);
+  const [inquiries, setInquiries] = useState<Inquiry[]>([]);
   const [settings, setSettings] = useState<SiteSettings>(defaultSettings);
 
   // Refresh Data from Backend API
@@ -274,12 +151,13 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         settingService.fetchSiteSettings(),
       ]);
 
-      if (fetchedProducts.length > 0) setProducts(fetchedProducts);
-      if (fetchedBlogs.length > 0) setBlogs(fetchedBlogs);
-      if (fetchedShowrooms.length > 0) setShowrooms(fetchedShowrooms);
-      if (fetchedLeadership.length > 0) setLeadership(fetchedLeadership);
-      if (fetchedSuppliers.length > 0) setSuppliers(fetchedSuppliers);
-      if (fetchedInquiries.length > 0) setInquiries(fetchedInquiries);
+      // Always set data from backend, even if empty (so deleted items disappear)
+      setProducts(fetchedProducts);
+      setBlogs(fetchedBlogs);
+      setShowrooms(fetchedShowrooms);
+      setLeadership(fetchedLeadership);
+      setSuppliers(fetchedSuppliers);
+      setInquiries(fetchedInquiries);
       if (Object.keys(fetchedSettings).length > 0) {
         setSettings((prev) => ({ ...prev, ...fetchedSettings }));
       }
