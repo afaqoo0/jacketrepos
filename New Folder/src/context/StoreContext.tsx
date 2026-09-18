@@ -249,31 +249,32 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         status: blogData.status || 'published',
       });
       setBlogs((prev) => [created, ...prev]);
-    } catch (error) {
-      const tempBlog: Blog = {
-        ...blogData,
-        id: 'blog-' + Date.now(),
-        publishedAt: new Date().toISOString().split('T')[0],
-      };
-      setBlogs((prev) => [tempBlog, ...prev]);
+    } catch (error: any) {
+      console.error('Failed to add blog:', error);
+      alert(`Error saving blog: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
   const updateBlog = async (id: string, updatedFields: Partial<Blog>) => {
-    setBlogs((prev) => prev.map((b) => (b.id === id ? { ...b, ...updatedFields } : b)));
     try {
-      await blogService.updateBlog(id, updatedFields);
-    } catch (error) {
-      console.warn('Backend update failed:', error);
+      const updated = await blogService.updateBlog(id, updatedFields);
+      setBlogs((prev) => prev.map((b) => (b.id === id ? updated : b)));
+    } catch (error: any) {
+      console.error('Failed to update blog:', error);
+      alert(`Error updating blog: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
   const deleteBlog = async (id: string) => {
-    setBlogs((prev) => prev.filter((b) => b.id !== id));
     try {
       await blogService.deleteBlog(id);
-    } catch (error) {
-      console.warn('Backend delete failed:', error);
+      setBlogs((prev) => prev.filter((b) => b.id !== id));
+    } catch (error: any) {
+      console.error('Failed to delete blog:', error);
+      alert(`Error deleting blog: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
@@ -282,26 +283,32 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     try {
       const created = await showroomService.createShowroom(showroomData);
       setShowrooms((prev) => [...prev, created]);
-    } catch (error) {
-      setShowrooms((prev) => [...prev, { ...showroomData, id: 'sr-' + Date.now() }]);
+    } catch (error: any) {
+      console.error('Failed to add showroom:', error);
+      alert(`Error saving showroom: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
   const updateShowroom = async (id: string, updatedFields: Partial<Showroom>) => {
-    setShowrooms((prev) => prev.map((s) => (s.id === id ? { ...s, ...updatedFields } : s)));
     try {
-      await showroomService.updateShowroom(id, updatedFields);
-    } catch (error) {
-      console.warn('Backend update failed:', error);
+      const updated = await showroomService.updateShowroom(id, updatedFields);
+      setShowrooms((prev) => prev.map((s) => (s.id === id ? updated : s)));
+    } catch (error: any) {
+      console.error('Failed to update showroom:', error);
+      alert(`Error updating showroom: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
   const deleteShowroom = async (id: string) => {
-    setShowrooms((prev) => prev.filter((s) => s.id !== id));
     try {
       await showroomService.deleteShowroom(id);
-    } catch (error) {
-      console.warn('Backend delete failed:', error);
+      setShowrooms((prev) => prev.filter((s) => s.id !== id));
+    } catch (error: any) {
+      console.error('Failed to delete showroom:', error);
+      alert(`Error deleting showroom: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
@@ -310,26 +317,32 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     try {
       const created = await leadershipService.createLeader(personData);
       setLeadership((prev) => [...prev, created]);
-    } catch (error) {
-      setLeadership((prev) => [...prev, { ...personData, id: 'lead-' + Date.now() }]);
+    } catch (error: any) {
+      console.error('Failed to add leadership:', error);
+      alert(`Error saving leader: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
   const updateLeadership = async (id: string, updatedFields: Partial<Leadership>) => {
-    setLeadership((prev) => prev.map((l) => (l.id === id ? { ...l, ...updatedFields } : l)));
     try {
-      await leadershipService.updateLeader(id, updatedFields);
-    } catch (error) {
-      console.warn('Backend update failed:', error);
+      const updated = await leadershipService.updateLeader(id, updatedFields);
+      setLeadership((prev) => prev.map((l) => (l.id === id ? updated : l)));
+    } catch (error: any) {
+      console.error('Failed to update leadership:', error);
+      alert(`Error updating leader: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
   const deleteLeadership = async (id: string) => {
-    setLeadership((prev) => prev.filter((l) => l.id !== id));
     try {
       await leadershipService.deleteLeader(id);
-    } catch (error) {
-      console.warn('Backend delete failed:', error);
+      setLeadership((prev) => prev.filter((l) => l.id !== id));
+    } catch (error: any) {
+      console.error('Failed to delete leadership:', error);
+      alert(`Error deleting leader: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
@@ -338,26 +351,32 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     try {
       const created = await supplierService.createSupplier(supplierData);
       setSuppliers((prev) => [...prev, created]);
-    } catch (error) {
-      setSuppliers((prev) => [...prev, { ...supplierData, id: 'sup-' + Date.now() }]);
+    } catch (error: any) {
+      console.error('Failed to add supplier:', error);
+      alert(`Error saving supplier: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
   const updateSupplier = async (id: string, updatedFields: Partial<Supplier>) => {
-    setSuppliers((prev) => prev.map((s) => (s.id === id ? { ...s, ...updatedFields } : s)));
     try {
-      await supplierService.updateSupplier(id, updatedFields);
-    } catch (error) {
-      console.warn('Backend update failed:', error);
+      const updated = await supplierService.updateSupplier(id, updatedFields);
+      setSuppliers((prev) => prev.map((s) => (s.id === id ? updated : s)));
+    } catch (error: any) {
+      console.error('Failed to update supplier:', error);
+      alert(`Error updating supplier: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
   const deleteSupplier = async (id: string) => {
-    setSuppliers((prev) => prev.filter((s) => s.id !== id));
     try {
       await supplierService.deleteSupplier(id);
-    } catch (error) {
-      console.warn('Backend delete failed:', error);
+      setSuppliers((prev) => prev.filter((s) => s.id !== id));
+    } catch (error: any) {
+      console.error('Failed to delete supplier:', error);
+      alert(`Error deleting supplier: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
@@ -366,33 +385,33 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     try {
       const created = await inquiryService.createInquiry(inquiryData);
       setInquiries((prev) => [created, ...prev]);
-    } catch (error) {
-      const temp: Inquiry = {
-        ...inquiryData,
-        id: 'inq-' + Date.now(),
-        status: 'new',
-        createdAt: new Date().toISOString().split('T')[0],
-      };
-      setInquiries((prev) => [temp, ...prev]);
+    } catch (error: any) {
+      console.error('Failed to submit inquiry:', error);
+      alert(`Error submitting inquiry: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
   const updateInquiryStatus = async (id: string, status: 'new' | 'replied' | 'archived') => {
-    setInquiries((prev) => prev.map((i) => (i.id === id ? { ...i, status } : i)));
     try {
       await inquiryService.updateInquiryStatus(id, status);
-    } catch (error) {
-      console.warn('Backend status update failed:', error);
+      setInquiries((prev) => prev.map((i) => (i.id === id ? { ...i, status } : i)));
+    } catch (error: any) {
+      console.error('Failed to update inquiry:', error);
+      alert(`Error updating inquiry: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
   // Site Settings
   const updateSettings = async (newSettings: Partial<SiteSettings>) => {
-    setSettings((prev) => ({ ...prev, ...newSettings }));
     try {
       await settingService.updateSiteSettings(newSettings);
-    } catch (error) {
-      console.warn('Backend settings update failed:', error);
+      setSettings((prev) => ({ ...prev, ...newSettings }));
+    } catch (error: any) {
+      console.error('Failed to update settings:', error);
+      alert(`Error saving settings: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 
