@@ -214,22 +214,21 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     try {
       const created = await productService.createProduct(productData);
       setProducts((prev) => [created, ...prev]);
-    } catch (error) {
-      const tempProduct: Product = {
-        ...productData,
-        id: 'prod-' + Date.now(),
-        createdAt: new Date().toISOString().split('T')[0],
-      };
-      setProducts((prev) => [tempProduct, ...prev]);
+    } catch (error: any) {
+      console.error('Failed to add product to backend:', error);
+      alert(`Error saving product: ${error.message || 'Check console'}`);
+      throw error; // Throw so the UI can know it failed!
     }
   };
 
   const updateProduct = async (id: string, updatedFields: Partial<Product>) => {
-    setProducts((prev) => prev.map((p) => (p.id === id ? { ...p, ...updatedFields } : p)));
     try {
-      await productService.updateProduct(id, updatedFields);
-    } catch (error) {
-      console.warn('Backend update failed, updated locally:', error);
+      const updated = await productService.updateProduct(id, updatedFields);
+      setProducts((prev) => prev.map((p) => (p.id === id ? updated : p)));
+    } catch (error: any) {
+      console.error('Failed to update product in backend:', error);
+      alert(`Error updating product: ${error.message || 'Check console'}`);
+      throw error;
     }
   };
 

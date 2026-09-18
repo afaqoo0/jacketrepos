@@ -167,7 +167,7 @@ export const AdminDashboardView: React.FC = () => {
     setProductModalOpen(true);
   };
 
-  const handleSaveProduct = (e: React.FormEvent) => {
+  const handleSaveProduct = async (e: React.FormEvent) => {
     e.preventDefault();
     const colorsArr = productForm.colors.split(',').map((s) => s.trim()).filter(Boolean);
     const sizesArr = productForm.sizes.split(',').map((s) => s.trim()).filter(Boolean);
@@ -190,12 +190,17 @@ export const AdminDashboardView: React.FC = () => {
       featured: productForm.featured,
     };
 
-    if (editingProduct) {
-      updateProduct(editingProduct.id, payload);
-    } else {
-      addProduct(payload);
+    try {
+      if (editingProduct) {
+        await updateProduct(editingProduct.id, payload);
+      } else {
+        await addProduct(payload);
+      }
+      setProductModalOpen(false);
+    } catch (error) {
+      console.error('Failed to save product:', error);
+      // Modal stays open so user can fix issues
     }
-    setProductModalOpen(false);
   };
 
   // Open Blog Modal
