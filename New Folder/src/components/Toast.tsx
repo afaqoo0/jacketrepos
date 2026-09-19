@@ -31,7 +31,7 @@ export const Toast: React.FC<ToastProps> = ({ toast, onClose, duration = 4000 })
       <div
         className={`flex items-center space-x-3 px-5 py-3.5 rounded-2xl shadow-2xl backdrop-blur-md border ${
           isSuccess
-            ? 'bg-slate-900/90 border-lime-500/40 text-lime-400'
+            ? 'bg-slate-900/90 border-slate-300/40 text-white'
             : 'bg-slate-900/90 border-red-500/40 text-red-400'
         }`}
       >

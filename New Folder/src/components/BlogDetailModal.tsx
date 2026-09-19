@@ -15,8 +15,8 @@ export const BlogDetailModal: React.FC<BlogDetailModalProps> = ({ blog, onClose 
         {/* Header */}
         <div className="px-6 py-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <BookOpen className="w-5 h-5 text-lime-400" />
-            <span className="text-sm font-bold text-lime-400 uppercase font-heading">{blog.category}</span>
+            <BookOpen className="w-5 h-5 text-white" />
+            <span className="text-sm font-bold text-white uppercase font-heading">{blog.category}</span>
           </div>
           <button
             onClick={onClose}
@@ -43,7 +43,7 @@ export const BlogDetailModal: React.FC<BlogDetailModalProps> = ({ blog, onClose 
           {/* Meta Info */}
           <div className="flex items-center space-x-4 text-xs text-slate-400">
             <span className="flex items-center space-x-1.5">
-              <Calendar className="w-4 h-4 text-lime-400" />
+              <Calendar className="w-4 h-4 text-white" />
               <span>{blog.publishedAt}</span>
             </span>
             <span className="flex items-center space-x-1.5">
@@ -58,7 +58,7 @@ export const BlogDetailModal: React.FC<BlogDetailModalProps> = ({ blog, onClose 
           </h2>
 
           {/* Summary */}
-          <p className="text-sm text-slate-300 leading-relaxed italic border-l-2 border-lime-400 pl-4">
+          <p className="text-sm text-slate-300 leading-relaxed italic border-l-2 border-white pl-4">
             {blog.summary}
           </p>
 

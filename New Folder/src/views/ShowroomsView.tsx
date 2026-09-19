@@ -16,7 +16,7 @@ export const ShowroomsView: React.FC = () => {
       
       {/* Page Title */}
       <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-slate-800 space-y-3">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-lime-400/10 border border-lime-400/30 text-lime-400 text-xs font-bold font-heading">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 border border-white/30 text-white text-xs font-bold font-heading">
           <Globe className="w-3.5 h-3.5" />
           <span>Virtual Global Platform</span>
         </div>
@@ -33,13 +33,13 @@ export const ShowroomsView: React.FC = () => {
         
         <div className="lg:col-span-6 space-y-6">
           
-          <div className="glass-card p-8 rounded-3xl border border-lime-400/50 space-y-6 shadow-2xl bg-gradient-to-br from-slate-900/90 to-slate-950">
+          <div className="glass-card p-8 rounded-3xl border border-white/50 space-y-6 shadow-2xl bg-gradient-to-br from-slate-900/90 to-slate-950">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-2xl bg-lime-400/20 text-lime-400 border border-lime-400/30 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-white/20 text-white border border-white/30 flex items-center justify-center">
                 <Laptop className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs font-extrabold text-lime-400 uppercase tracking-widest font-heading">
+                <span className="text-xs font-extrabold text-white uppercase tracking-widest font-heading">
                   100% Online Experience
                 </span>
                 <h3 className="text-xl font-bold text-white font-heading">
@@ -54,17 +54,17 @@ export const ShowroomsView: React.FC = () => {
 
             <div className="space-y-3 text-xs text-slate-300 pt-2 border-t border-slate-800">
               <p className="flex items-center space-x-2">
-                <Globe className="w-4 h-4 text-lime-400 flex-shrink-0" />
+                <Globe className="w-4 h-4 text-white flex-shrink-0" />
                 <span><strong>Access:</strong> Available Online 24/7 Worldwide</span>
               </p>
 
               <p className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-lime-400 flex-shrink-0" />
-                <span><strong>Instant Support & Orders:</strong> <span className="font-mono text-lime-400 font-bold">03085410293</span></span>
+                <Phone className="w-4 h-4 text-white flex-shrink-0" />
+                <span><strong>Instant Support & Orders:</strong> <span className="font-mono text-white font-bold">03085410293</span></span>
               </p>
 
               <p className="flex items-start space-x-2 text-slate-400">
-                <Clock className="w-4 h-4 text-lime-400 flex-shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
                 <span><strong>Customer Assistance Hours:</strong> Monday - Sunday: 9:00 AM - 11:00 PM PKT</span>
               </p>
             </div>
@@ -72,7 +72,7 @@ export const ShowroomsView: React.FC = () => {
             <div className="pt-3 flex flex-col sm:flex-row gap-3">
               <button
                 onClick={openWhatsApp}
-                className="flex-1 py-3 px-4 rounded-xl text-xs font-extrabold text-slate-950 bg-gradient-to-r from-lime-400 to-emerald-400 hover:from-lime-300 hover:to-emerald-300 shadow-md flex items-center justify-center space-x-2 font-heading"
+                className="flex-1 py-3 px-4 rounded-xl text-xs font-extrabold text-slate-950 bg-gradient-to-r from-white to-slate-300 hover:from-slate-200 hover:to-slate-400 shadow-md flex items-center justify-center space-x-2 font-heading"
               >
                 <MessageSquare className="w-4 h-4 fill-slate-950" />
                 <span>Connect via WhatsApp (03085410293)</span>
@@ -95,7 +95,7 @@ export const ShowroomsView: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
               
               <div className="absolute bottom-4 left-4 right-4 glass-card p-4 rounded-xl border border-slate-700">
-                <span className="text-[10px] font-bold text-lime-400 uppercase tracking-widest font-heading">
+                <span className="text-[10px] font-bold text-white uppercase tracking-widest font-heading">
                   Interactive Catalog
                 </span>
                 <h4 className="text-sm font-bold text-white font-heading">

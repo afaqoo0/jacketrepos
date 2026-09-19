@@ -41,11 +41,11 @@ export const ProductsView: React.FC = () => {
       {/* Header Banner */}
       <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-slate-800 space-y-4 text-center sm:text-left relative overflow-hidden">
         <div className="absolute top-0 right-0 p-8 opacity-10 hidden sm:block">
-          <ShoppingBag className="w-48 h-48 text-lime-400" />
+          <ShoppingBag className="w-48 h-48 text-white" />
         </div>
 
         <div className="relative z-10 max-w-2xl space-y-2">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-lime-400/10 border border-lime-400/30 text-lime-400 text-xs font-bold font-heading">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 border border-white/30 text-white text-xs font-bold font-heading">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Official TS Sports Digital Catalog</span>
           </div>
@@ -71,7 +71,7 @@ export const ProductsView: React.FC = () => {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
                 selectedCategory === cat
-                  ? 'bg-lime-400 text-slate-950 shadow-md shadow-lime-400/20 font-heading'
+                  ? 'bg-white text-slate-950 shadow-md shadow-white/10 font-heading'
                   : 'text-slate-300 hover:bg-slate-800 hover:text-white'
               }`}
             >
@@ -88,7 +88,7 @@ export const ProductsView: React.FC = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search products or SKU..."
-            className="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-lime-400 transition-colors"
+            className="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-white transition-colors"
           />
           {searchQuery && (
             <button
@@ -121,7 +121,7 @@ export const ProductsView: React.FC = () => {
               setSearchQuery('');
               setSelectedCategory('All');
             }}
-            className="px-4 py-2 rounded-xl bg-slate-800 text-xs font-bold text-lime-400 hover:bg-slate-700 font-heading"
+            className="px-4 py-2 rounded-xl bg-slate-800 text-xs font-bold text-white hover:bg-slate-700 font-heading"
           >
             Reset Filters
           </button>

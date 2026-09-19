@@ -267,14 +267,14 @@ export const AdminDashboardView: React.FC = () => {
       {/* Top Header Bar */}
       <div className="glass-panel p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-xl bg-lime-400 text-slate-950 flex items-center justify-center font-bold font-heading">
+          <div className="w-10 h-10 rounded-xl bg-white text-slate-950 flex items-center justify-center font-bold font-heading">
             <ShieldCheck className="w-6 h-6 stroke-[2.5]" />
           </div>
           <div>
             <div className="flex items-center space-x-2">
               <h1 className="text-xl font-extrabold text-white font-heading">TS SPORTS ADMIN MANAGEMENT</h1>
               {isBackendConnected ? (
-                <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold flex items-center gap-1 border border-emerald-500/30">
+                <span className="px-2 py-0.5 rounded-full bg-white/10 text-white text-[10px] font-bold flex items-center gap-1 border border-white/20">
                   <Database className="w-3 h-3" /> PostgreSQL (Prisma)
                 </span>
               ) : (
@@ -283,7 +283,7 @@ export const AdminDashboardView: React.FC = () => {
                 </span>
               )}
             </div>
-            <p className="text-xs text-slate-400">Authenticated Session: <strong className="text-lime-400">{adminUser}</strong></p>
+            <p className="text-xs text-slate-400">Authenticated Session: <strong className="text-white">{adminUser}</strong></p>
           </div>
         </div>
 
@@ -313,7 +313,7 @@ export const AdminDashboardView: React.FC = () => {
             onClick={() => setActiveAdminTab(tab.id as AdminTab)}
             className={`px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap flex items-center space-x-1.5 transition-all ${
               activeAdminTab === tab.id
-                ? 'bg-lime-400 text-slate-950 font-heading shadow-md shadow-lime-400/20'
+                ? 'bg-white text-slate-950 font-heading shadow-md shadow-white/10'
                 : 'bg-slate-900/80 text-slate-300 hover:bg-slate-800 border border-slate-800'
             }`}
           >
@@ -333,14 +333,14 @@ export const AdminDashboardView: React.FC = () => {
               <span className="text-xs font-bold uppercase text-slate-400 font-heading">Total Products</span>
               <div className="flex items-baseline justify-between">
                 <span className="text-3xl font-black text-white font-heading">{products.length}</span>
-                <span className="text-xs text-lime-400 font-bold">{products.filter((p) => p.status === 'active').length} Active</span>
+                <span className="text-xs text-white font-bold">{products.filter((p) => p.status === 'active').length} Active</span>
               </div>
             </div>
 
             <div className="glass-card p-6 rounded-2xl space-y-2 border border-slate-800">
               <span className="text-xs font-bold uppercase text-slate-400 font-heading">Featured Showcase</span>
               <div className="flex items-baseline justify-between">
-                <span className="text-3xl font-black text-lime-400 font-heading">{products.filter((p) => p.featured).length}</span>
+                <span className="text-3xl font-black text-white font-heading">{products.filter((p) => p.featured).length}</span>
                 <span className="text-xs text-slate-400">On Home Page</span>
               </div>
             </div>
@@ -349,7 +349,7 @@ export const AdminDashboardView: React.FC = () => {
               <span className="text-xs font-bold uppercase text-slate-400 font-heading">Published Articles</span>
               <div className="flex items-baseline justify-between">
                 <span className="text-3xl font-black text-white font-heading">{blogs.length}</span>
-                <span className="text-xs text-emerald-400 font-bold">Active Blogs</span>
+                <span className="text-xs text-white font-bold">Active Blogs</span>
               </div>
             </div>
 
@@ -357,7 +357,7 @@ export const AdminDashboardView: React.FC = () => {
               <span className="text-xs font-bold uppercase text-slate-400 font-heading">Customer Inquiries</span>
               <div className="flex items-baseline justify-between">
                 <span className="text-3xl font-black text-white font-heading">{inquiries.length}</span>
-                <span className="text-xs text-lime-400 font-bold">{inquiries.filter((i) => i.status === 'new').length} New</span>
+                <span className="text-xs text-white font-bold">{inquiries.filter((i) => i.status === 'new').length} New</span>
               </div>
             </div>
           </div>
@@ -366,13 +366,13 @@ export const AdminDashboardView: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4">
               <h3 className="text-base font-bold text-white font-heading flex items-center gap-2">
-                <ShoppingBag className="w-5 h-5 text-lime-400" />
+                <ShoppingBag className="w-5 h-5 text-white" />
                 <span>Quick Actions</span>
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 <button
                   onClick={() => handleOpenProductModal()}
-                  className="p-4 rounded-2xl bg-lime-400 text-slate-950 font-bold text-xs flex items-center justify-center space-x-2 hover:bg-lime-300 transition-colors font-heading"
+                  className="p-4 rounded-2xl bg-white text-slate-950 font-bold text-xs flex items-center justify-center space-x-2 hover:bg-slate-300 transition-colors font-heading"
                 >
                   <Plus className="w-4 h-4" />
                   <span>Add New Product</span>
@@ -381,7 +381,7 @@ export const AdminDashboardView: React.FC = () => {
                   onClick={() => handleOpenBlogModal()}
                   className="p-4 rounded-2xl bg-slate-800 text-white font-bold text-xs flex items-center justify-center space-x-2 hover:bg-slate-700 transition-colors font-heading"
                 >
-                  <Plus className="w-4 h-4 text-lime-400" />
+                  <Plus className="w-4 h-4 text-white" />
                   <span>Create Blog Post</span>
                 </button>
               </div>
@@ -390,7 +390,7 @@ export const AdminDashboardView: React.FC = () => {
             <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-3">
               <h3 className="text-base font-bold text-white font-heading">Database Info</h3>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Backend Status: <strong className="text-lime-400">{isBackendConnected ? 'Connected to PostgreSQL (Prisma)' : 'Offline / Demo Mode'}</strong>.
+                Backend Status: <strong className="text-white">{isBackendConnected ? 'Connected to PostgreSQL (Prisma)' : 'Offline / Demo Mode'}</strong>.
               </p>
               <p className="text-xs text-slate-400">
                 All data, images, blogs, showrooms, and settings are managed securely with Row Level Security (RLS) policies.
@@ -408,7 +408,7 @@ export const AdminDashboardView: React.FC = () => {
             <h2 className="text-xl font-bold text-white font-heading">Product Catalog Management</h2>
             <button
               onClick={() => handleOpenProductModal()}
-              className="px-4 py-2 rounded-xl bg-lime-400 text-slate-950 text-xs font-bold flex items-center space-x-2 hover:bg-lime-300 transition-colors font-heading"
+              className="px-4 py-2 rounded-xl bg-white text-slate-950 text-xs font-bold flex items-center space-x-2 hover:bg-slate-300 transition-colors font-heading"
             >
               <Plus className="w-4 h-4" />
               <span>Add Product</span>
@@ -423,7 +423,7 @@ export const AdminDashboardView: React.FC = () => {
                   <div>
                     <div className="flex items-center space-x-2">
                       <h4 className="text-sm font-bold text-white font-heading">{product.name}</h4>
-                      {product.featured && <span className="px-2 py-0.5 rounded-md bg-lime-400/20 text-lime-400 text-[10px] font-bold">Featured</span>}
+                      {product.featured && <span className="px-2 py-0.5 rounded-md bg-white/20 text-white text-[10px] font-bold">Featured</span>}
                     </div>
                     <p className="text-xs text-slate-400">SKU: {product.SKU} • Category: {product.category} • ${product.price}</p>
                   </div>
@@ -432,7 +432,7 @@ export const AdminDashboardView: React.FC = () => {
                 <div className="flex items-center space-x-2">
                   <button
                     onClick={() => handleOpenProductModal(product)}
-                    className="p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-lime-400 hover:bg-slate-700 transition-colors"
+                    className="p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
                   >
                     <Edit3 className="w-4 h-4" />
                   </button>
@@ -456,7 +456,7 @@ export const AdminDashboardView: React.FC = () => {
             <h2 className="text-xl font-bold text-white font-heading">Blog Posts & News Articles</h2>
             <button
               onClick={() => handleOpenBlogModal()}
-              className="px-4 py-2 rounded-xl bg-lime-400 text-slate-950 text-xs font-bold flex items-center space-x-2 hover:bg-lime-300 transition-colors font-heading"
+              className="px-4 py-2 rounded-xl bg-white text-slate-950 text-xs font-bold flex items-center space-x-2 hover:bg-slate-300 transition-colors font-heading"
             >
               <Plus className="w-4 h-4" />
               <span>Create Blog Post</span>
@@ -477,7 +477,7 @@ export const AdminDashboardView: React.FC = () => {
                 <div className="flex items-center space-x-2">
                   <button
                     onClick={() => handleOpenBlogModal(blog)}
-                    className="p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-lime-400 hover:bg-slate-700 transition-colors"
+                    className="p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
                   >
                     <Edit3 className="w-4 h-4" />
                   </button>
@@ -503,7 +503,7 @@ export const AdminDashboardView: React.FC = () => {
               <div key={sr.id} className="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
                 <h4 className="text-base font-bold text-white font-heading">{sr.name}</h4>
                 <p className="text-xs text-slate-300">{sr.address}, {sr.city}, {sr.country}</p>
-                <p className="text-xs text-lime-400">Phone: {sr.phone}</p>
+                <p className="text-xs text-white">Phone: {sr.phone}</p>
                 <p className="text-xs text-slate-400">Hours: {sr.hours}</p>
               </div>
             ))}
@@ -521,7 +521,7 @@ export const AdminDashboardView: React.FC = () => {
                 <img src={person.image} alt={person.name} className="w-14 h-14 rounded-xl object-cover border border-slate-800" />
                 <div>
                   <h4 className="text-base font-bold text-white font-heading">{person.name}</h4>
-                  <p className="text-xs text-lime-400 font-semibold">{person.designation}</p>
+                  <p className="text-xs text-white font-semibold">{person.designation}</p>
                   <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{person.bio}</p>
                 </div>
               </div>
@@ -537,7 +537,7 @@ export const AdminDashboardView: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {suppliers.map((supplier) => (
               <div key={supplier.id} className="glass-card p-5 rounded-2xl border border-slate-800 space-y-2">
-                <span className="text-[10px] font-bold text-lime-400 uppercase">{supplier.category}</span>
+                <span className="text-[10px] font-bold text-white uppercase">{supplier.category}</span>
                 <h4 className="text-base font-bold text-white font-heading">{supplier.name}</h4>
                 <p className="text-xs text-slate-300">{supplier.description}</p>
                 <p className="text-[11px] text-slate-400">Location: {supplier.location}</p>
@@ -556,11 +556,11 @@ export const AdminDashboardView: React.FC = () => {
               <div key={inq.id} className="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
                 <div className="flex items-start justify-between">
                   <div>
-                    <span className="text-xs font-bold text-lime-400 font-heading">{inq.subject}</span>
+                    <span className="text-xs font-bold text-white font-heading">{inq.subject}</span>
                     <h4 className="text-base font-bold text-white font-heading">{inq.name} ({inq.email})</h4>
                     <p className="text-xs text-slate-400">Phone: {inq.phone || 'N/A'} • Submitted {inq.createdAt}</p>
                   </div>
-                  <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${inq.status === 'new' ? 'bg-lime-400 text-slate-950' : 'bg-slate-800 text-slate-400'}`}>
+                  <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${inq.status === 'new' ? 'bg-white text-slate-950' : 'bg-slate-800 text-slate-400'}`}>
                     {inq.status}
                   </span>
                 </div>
@@ -570,7 +570,7 @@ export const AdminDashboardView: React.FC = () => {
                 <div className="flex items-center space-x-2 pt-2">
                   <button
                     onClick={() => updateInquiryStatus(inq.id, 'replied')}
-                    className="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-xs font-bold hover:bg-emerald-500/30"
+                    className="px-3 py-1 rounded-lg bg-white/10 text-white text-xs font-bold hover:bg-white/20"
                   >
                     Mark as Replied
                   </button>
@@ -596,7 +596,7 @@ export const AdminDashboardView: React.FC = () => {
               <p className="text-xs text-slate-400">Manage business WhatsApp ordering number and brand meta</p>
             </div>
             {settingsSaved && (
-              <span className="text-xs font-bold text-emerald-400 flex items-center gap-1">
+              <span className="text-xs font-bold text-white flex items-center gap-1">
                 <CheckCircle2 className="w-4 h-4" />
                 Settings Saved!
               </span>
@@ -612,7 +612,7 @@ export const AdminDashboardView: React.FC = () => {
                 type="text"
                 value={settingsForm.whatsappNumber}
                 onChange={(e) => setSettingsForm({ ...settingsForm, whatsappNumber: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-lime-400 font-mono font-bold"
+                className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white font-mono font-bold"
               />
               <p className="text-[11px] text-slate-500 mt-1">Formated for wa.me/ deep link: 923085410293 (03085410293).</p>
             </div>
@@ -639,7 +639,7 @@ export const AdminDashboardView: React.FC = () => {
 
             <button
               type="submit"
-              className="py-3 px-6 rounded-xl text-xs font-bold text-slate-950 bg-lime-400 hover:bg-lime-300 shadow-md flex items-center space-x-2 font-heading"
+              className="py-3 px-6 rounded-xl text-xs font-bold text-slate-950 bg-white hover:bg-slate-300 shadow-md flex items-center space-x-2 font-heading"
             >
               <Save className="w-4 h-4" />
               <span>Save Configuration</span>
@@ -730,7 +730,7 @@ export const AdminDashboardView: React.FC = () => {
                           ×
                         </button>
                         {idx === 0 && (
-                          <span className="absolute bottom-0 left-0 right-0 text-[9px] text-center bg-lime-400 text-slate-950 font-bold rounded-b-xl">MAIN</span>
+                          <span className="absolute bottom-0 left-0 right-0 text-[9px] text-center bg-white text-slate-950 font-bold rounded-b-xl">MAIN</span>
                         )}
                       </div>
                     ))}
@@ -741,9 +741,9 @@ export const AdminDashboardView: React.FC = () => {
                 <div className="flex items-center space-x-3">
                   <label className={`px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs flex items-center space-x-1.5 cursor-pointer border border-slate-700 ${uploadingImage ? 'opacity-60 cursor-not-allowed' : ''}`}>
                     {uploadingImage ? (
-                      <Loader2 className="w-4 h-4 animate-spin text-lime-400" />
+                      <Loader2 className="w-4 h-4 animate-spin text-white" />
                     ) : (
-                      <Upload className="w-4 h-4 text-lime-400" />
+                      <Upload className="w-4 h-4 text-white" />
                     )}
                     <span>{uploadingImage ? 'Uploading...' : '+ Add Image'}</span>
                     <input
@@ -765,7 +765,7 @@ export const AdminDashboardView: React.FC = () => {
                 </label>
               </div>
 
-              <button type="submit" className="w-full py-3 rounded-xl bg-lime-400 text-slate-950 font-bold uppercase font-heading">
+              <button type="submit" className="w-full py-3 rounded-xl bg-white text-slate-950 font-bold uppercase font-heading">
                 Save Product
               </button>
             </form>
@@ -810,9 +810,9 @@ export const AdminDashboardView: React.FC = () => {
                 <div className="flex items-center space-x-3 mb-2">
                   <label className="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs flex items-center space-x-1.5 cursor-pointer border border-slate-700">
                     {uploadingImage ? (
-                      <Loader2 className="w-4 h-4 animate-spin text-lime-400" />
+                      <Loader2 className="w-4 h-4 animate-spin text-white" />
                     ) : (
-                      <Upload className="w-4 h-4 text-lime-400" />
+                      <Upload className="w-4 h-4 text-white" />
                     )}
                     <span>Upload Featured Image</span>
                     <input
@@ -832,7 +832,7 @@ export const AdminDashboardView: React.FC = () => {
                 <textarea rows={6} value={blogForm.content} onChange={(e) => setBlogForm({ ...blogForm, content: e.target.value })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white" />
               </div>
 
-              <button type="submit" className="w-full py-3 rounded-xl bg-lime-400 text-slate-950 font-bold uppercase font-heading">
+              <button type="submit" className="w-full py-3 rounded-xl bg-white text-slate-950 font-bold uppercase font-heading">
                 Publish Blog Post
               </button>
             </form>

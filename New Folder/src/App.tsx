@@ -28,7 +28,7 @@ const MainContent: React.FC = () => {
   } = useStore();
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 selection:bg-lime-400 selection:text-slate-950 font-sans">
+    <div className="min-h-screen flex flex-col justify-between bg-slate-950 text-slate-100 selection:bg-white selection:text-black font-sans">
       <Navbar />
 
       <main className="flex-1">

@@ -10,7 +10,7 @@ export const SuppliersView: React.FC = () => {
       
       {/* Header */}
       <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-slate-800 space-y-3">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-lime-400/10 border border-lime-400/30 text-lime-400 text-xs font-bold font-heading">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 border border-white/30 text-white text-xs font-bold font-heading">
           <Truck className="w-3.5 h-3.5" />
           <span>Global Supply Chain Network</span>
         </div>
@@ -27,19 +27,19 @@ export const SuppliersView: React.FC = () => {
         {suppliers.map((supplier) => (
           <div
             key={supplier.id}
-            className="glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6 hover:border-lime-400/40 transition-all"
+            className="glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6 hover:border-white/40 transition-all"
           >
             <div className="w-20 h-20 rounded-2xl bg-slate-900 overflow-hidden flex-shrink-0 border border-slate-800 flex items-center justify-center p-2">
               {supplier.logo ? (
                 <img src={supplier.logo} alt={supplier.name} className="w-full h-full object-contain" />
               ) : (
-                <Factory className="w-8 h-8 text-lime-400" />
+                <Factory className="w-8 h-8 text-white" />
               )}
             </div>
 
             <div className="space-y-3 flex-1">
               <div>
-                <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-lime-400/20 text-lime-400 font-heading">
+                <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-white/20 text-white font-heading">
                   {supplier.category}
                 </span>
                 <h3 className="text-xl font-bold text-white mt-1.5 font-heading">
@@ -53,7 +53,7 @@ export const SuppliersView: React.FC = () => {
 
               <div className="pt-2 flex items-center justify-between text-xs text-slate-400 border-t border-slate-800">
                 <span className="flex items-center space-x-1">
-                  <MapPin className="w-3.5 h-3.5 text-lime-400" />
+                  <MapPin className="w-3.5 h-3.5 text-white" />
                   <span>{supplier.location}</span>
                 </span>
 
@@ -62,7 +62,7 @@ export const SuppliersView: React.FC = () => {
                     href={supplier.website}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center space-x-1 font-bold text-lime-400 hover:underline font-heading"
+                    className="inline-flex items-center space-x-1 font-bold text-white hover:underline font-heading"
                   >
                     <span>Visit Website</span>
                     <ExternalLink className="w-3 h-3" />

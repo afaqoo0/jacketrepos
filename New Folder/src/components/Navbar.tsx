@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useStore } from '../context/StoreContext';
 import type { ActiveTab } from '../types';
 import { 
-  ShieldCheck, 
   ShoppingBag, 
   MapPin, 
   Info, 
@@ -51,19 +50,19 @@ export const Navbar: React.FC = () => {
       <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-slate-300 text-xs py-1.5 px-4 border-b border-slate-800/50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-lime-400 animate-pulse"></span>
+            <span className="inline-block w-2 h-2 rounded-full bg-white animate-pulse"></span>
             <span className="font-semibold text-slate-200">{settings.slogan}</span>
           </div>
           <div className="hidden sm:flex items-center space-x-4">
             <button 
               onClick={() => handleNavClick(isAdminAuthenticated ? 'admin-dashboard' : 'admin-login')}
-              className="flex items-center space-x-1.5 text-slate-400 hover:text-lime-400 transition-colors text-xs"
+              className="flex items-center space-x-1.5 text-slate-400 hover:text-white transition-colors text-xs"
             >
               <Lock className="w-3 h-3" />
               <span>{isAdminAuthenticated ? 'Admin Panel' : 'Admin Portal'}</span>
             </button>
             <span className="text-slate-700">|</span>
-            <span className="text-slate-400">WhatsApp Order: <strong className="text-lime-400">03085410293</strong></span>
+            <span className="text-slate-400">WhatsApp Order: <strong className="text-white">03085410293</strong></span>
           </div>
         </div>
       </div>
@@ -75,13 +74,10 @@ export const Navbar: React.FC = () => {
           onClick={() => handleNavClick('home')}
           className="flex items-center space-x-3 group focus:outline-none"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-lime-400 to-emerald-600 flex items-center justify-center shadow-lg shadow-lime-500/20 group-hover:scale-105 transition-transform">
-            <ShieldCheck className="w-6 h-6 text-slate-950 stroke-[2.5]" />
-          </div>
+          <img src="/ts-logo.jpg" alt="TS Sports Logo" className="w-12 h-12 rounded-lg object-cover group-hover:scale-105 transition-transform shadow-lg shadow-white/10" />
           <div className="flex flex-col text-left">
-            <span className="text-xl font-extrabold tracking-wider text-slate-50 font-heading group-hover:text-lime-400 transition-colors flex items-center gap-1.5">
+            <span className="text-xl font-extrabold tracking-wider text-slate-50 font-heading group-hover:text-white transition-colors flex items-center gap-1.5">
               TS SPORTS
-              <span className="text-[10px] px-1.5 py-0.5 rounded bg-lime-400/20 text-lime-400 font-sans font-bold border border-lime-400/30">PRO</span>
             </span>
             <span className="text-[10px] text-slate-400 tracking-widest uppercase font-semibold">Performance & Grip Gear</span>
           </div>
@@ -97,7 +93,7 @@ export const Navbar: React.FC = () => {
                 onClick={() => handleNavClick(item.id)}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all flex items-center space-x-1.5 ${
                   isActive
-                    ? 'bg-lime-400/10 text-lime-400 border border-lime-400/30 shadow-sm'
+                    ? 'bg-white/10 text-white border border-white/30 shadow-sm'
                     : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
                 }`}
               >
@@ -119,7 +115,7 @@ export const Navbar: React.FC = () => {
           
           <button
             onClick={openDirectWhatsApp}
-            className="px-4 py-2 text-xs font-extrabold text-slate-950 bg-gradient-to-r from-lime-400 to-emerald-400 hover:from-lime-300 hover:to-emerald-300 rounded-lg shadow-md shadow-lime-400/20 flex items-center space-x-1.5 transition-all hover:scale-[1.02] active:scale-95"
+            className="px-4 py-2 text-xs font-extrabold text-slate-950 bg-gradient-to-r from-white to-slate-300 hover:from-slate-200 hover:to-slate-400 rounded-lg shadow-md shadow-white/10 flex items-center space-x-1.5 transition-all hover:scale-[1.02] active:scale-95"
           >
             <MessageSquare className="w-4 h-4 fill-slate-950" />
             <span>Order on WhatsApp</span>
@@ -130,9 +126,9 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center md:hidden space-x-2">
           <button
             onClick={openDirectWhatsApp}
-            className="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold flex items-center gap-1"
+            className="p-2 rounded-lg bg-white/10 text-white border border-white/20 text-xs font-bold flex items-center gap-1"
           >
-            <MessageSquare className="w-4 h-4 fill-emerald-400" />
+            <MessageSquare className="w-4 h-4 fill-white" />
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -156,7 +152,7 @@ export const Navbar: React.FC = () => {
                   onClick={() => handleNavClick(item.id)}
                   className={`p-3 rounded-lg text-sm font-semibold flex items-center justify-between transition-all ${
                     isActive
-                      ? 'bg-lime-400 text-slate-950 font-bold'
+                      ? 'bg-white text-slate-950 font-bold'
                       : 'bg-slate-900/80 text-slate-200 hover:bg-slate-800 border border-slate-800'
                   }`}
                 >
@@ -173,7 +169,7 @@ export const Navbar: React.FC = () => {
           <div className="pt-2 border-t border-slate-800/80 space-y-2">
             <button
               onClick={openDirectWhatsApp}
-              className="w-full py-3 px-4 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-lime-400 to-emerald-400 flex items-center justify-center space-x-2 shadow-lg shadow-lime-500/20"
+              className="w-full py-3 px-4 rounded-xl text-sm font-bold text-slate-950 bg-gradient-to-r from-white to-slate-300 flex items-center justify-center space-x-2 shadow-lg shadow-white/10"
             >
               <MessageSquare className="w-5 h-5 fill-slate-950" />
               <span>Order via WhatsApp (03085410293)</span>

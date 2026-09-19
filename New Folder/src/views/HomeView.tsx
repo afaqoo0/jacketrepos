@@ -36,14 +36,12 @@ export const HomeView: React.FC = () => {
         {/* Hero Background Image & Overlays */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/hero.jpg"
-            alt="TS Sports Pitch Action"
-            className="w-full h-full object-cover object-center scale-105 animate-pulse duration-[10000ms]"
+            src="/hero-collage.jpg"
+            alt="TS Sports Grip Socks"
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/70" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/60" />
-          {/* Subtle grid pattern */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -51,16 +49,16 @@ export const HomeView: React.FC = () => {
           {/* Hero Left Content */}
           <div className="lg:col-span-7 space-y-8 text-left">
             
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-lime-400/10 border border-lime-400/30 backdrop-blur-md">
-              <Sparkles className="w-4 h-4 text-lime-400 animate-spin" />
-              <span className="text-xs font-bold text-lime-400 uppercase tracking-widest font-heading">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/30 backdrop-blur-md">
+              <Sparkles className="w-4 h-4 text-white animate-spin" />
+              <span className="text-xs font-bold text-white uppercase tracking-widest font-heading">
                 Next-Gen Athletic Performance & Grip Gear
               </span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white font-heading tracking-tight leading-[1.05]">
               UNLEASH <br />
-              <span className="text-gradient-lime">MAXIMUM TRACTION</span> <br />
+              <span className="text-white">MAXIMUM TRACTION</span> <br />
               ON THE PITCH.
             </h1>
 
@@ -72,7 +70,7 @@ export const HomeView: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
               <button
                 onClick={() => setActiveTab('products')}
-                className="px-8 py-4 rounded-2xl text-sm font-extrabold text-slate-950 bg-gradient-to-r from-lime-400 via-emerald-400 to-teal-400 hover:from-lime-300 hover:to-emerald-300 shadow-xl shadow-lime-500/25 flex items-center justify-center space-x-2 transition-all transform hover:scale-[1.02] active:scale-95"
+                className="px-8 py-4 rounded-2xl text-sm font-extrabold text-slate-950 bg-gradient-to-r from-white to-slate-300 hover:from-slate-200 hover:to-slate-400 shadow-xl shadow-white/10 flex items-center justify-center space-x-2 transition-all transform hover:scale-[1.02] active:scale-95"
               >
                 <ShoppingBag className="w-5 h-5 fill-slate-950" />
                 <span>Explore Catalog</span>
@@ -82,7 +80,7 @@ export const HomeView: React.FC = () => {
                 onClick={openGeneralWhatsApp}
                 className="px-8 py-4 rounded-2xl text-sm font-extrabold text-white bg-slate-900/90 hover:bg-slate-800 border border-slate-700 shadow-xl flex items-center justify-center space-x-2 transition-all transform hover:scale-[1.02] active:scale-95"
               >
-                <MessageSquare className="w-5 h-5 fill-emerald-400 text-emerald-400" />
+                <MessageSquare className="w-5 h-5 fill-white text-white" />
                 <span>Order on WhatsApp (03085410293)</span>
               </button>
             </div>
@@ -90,7 +88,7 @@ export const HomeView: React.FC = () => {
             {/* Feature Bullets */}
             <div className="pt-4 grid grid-cols-3 gap-4 border-t border-slate-800/80 text-left">
               <div>
-                <span className="text-xl sm:text-2xl font-black text-lime-400 font-heading">100%</span>
+                <span className="text-xl sm:text-2xl font-black text-white font-heading">100%</span>
                 <p className="text-[11px] text-slate-400 font-semibold uppercase">Zero Foot Slip</p>
               </div>
               <div>
@@ -98,7 +96,7 @@ export const HomeView: React.FC = () => {
                 <p className="text-[11px] text-slate-400 font-semibold uppercase">Silicone Pods</p>
               </div>
               <div>
-                <span className="text-xl sm:text-2xl font-black text-lime-400 font-heading">3D Mesh</span>
+                <span className="text-xl sm:text-2xl font-black text-white font-heading">3D Mesh</span>
                 <p className="text-[11px] text-slate-400 font-semibold uppercase">Sweat Wicking</p>
               </div>
             </div>
@@ -109,13 +107,13 @@ export const HomeView: React.FC = () => {
           <div className="lg:col-span-5 relative hidden lg:block">
             <div className="relative glass-card p-6 rounded-3xl border border-slate-700/80 shadow-2xl space-y-6">
               
-              <div className="aspect-[4/3] rounded-2xl bg-slate-950 overflow-hidden relative border border-slate-800">
+              <div className="aspect-[4/3] rounded-2xl bg-black overflow-hidden relative border border-slate-800">
                 <img
-                  src="/images/socks_white.jpg"
-                  alt="TS Sports Pro White"
+                  src="/hero-pairs.jpg"
+                  alt="TS Sports Grip Socks"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-lime-400 text-slate-950 text-xs font-black uppercase font-heading">
+                <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-white text-slate-950 text-xs font-black uppercase font-heading">
                   Best Seller
                 </div>
               </div>
@@ -123,7 +121,7 @@ export const HomeView: React.FC = () => {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-white font-heading">TS Sports Pro Grip 2.0</h3>
-                  <span className="text-lg font-extrabold text-lime-400 font-heading">$24.99</span>
+                  <span className="text-lg font-extrabold text-white font-heading">$24.99</span>
                 </div>
                 <p className="text-xs text-slate-400">
                   Dual-density silicone pod matrix on high-torque footbed zones.
@@ -132,7 +130,7 @@ export const HomeView: React.FC = () => {
 
               <button
                 onClick={() => setWhatsAppModalProduct(products[0])}
-                className="w-full py-3.5 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-lime-400 to-emerald-400 hover:from-lime-300 hover:to-emerald-300 shadow-md flex items-center justify-center space-x-2"
+                className="w-full py-3.5 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-white to-slate-300 hover:from-slate-200 hover:to-slate-400 shadow-md flex items-center justify-center space-x-2"
               >
                 <MessageSquare className="w-4 h-4 fill-slate-950" />
                 <span>Direct WhatsApp Order</span>
@@ -148,8 +146,8 @@ export const HomeView: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-800 pb-6">
           <div className="space-y-2">
-            <div className="flex items-center space-x-2 text-lime-400 font-semibold text-xs uppercase tracking-wider font-heading">
-              <Flame className="w-4 h-4 fill-lime-400" />
+            <div className="flex items-center space-x-2 text-white font-semibold text-xs uppercase tracking-wider font-heading">
+              <Flame className="w-4 h-4 fill-white" />
               <span>Performance Catalog</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-heading">
@@ -159,7 +157,7 @@ export const HomeView: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('products')}
-            className="inline-flex items-center space-x-1.5 text-xs font-bold text-lime-400 hover:text-lime-300 font-heading group"
+            className="inline-flex items-center space-x-1.5 text-xs font-bold text-white hover:text-slate-200 font-heading group"
           >
             <span>View All Products ({products.length})</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -179,11 +177,11 @@ export const HomeView: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-lime-400/10 text-lime-400 border border-lime-400/30 uppercase tracking-widest font-heading">
+            <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-white/10 text-white border border-white/30 uppercase tracking-widest font-heading">
               Engineering Excellence
             </span>
             <h2 className="text-3xl sm:text-5xl font-black text-white font-heading tracking-tight">
-              WHY ATHLETES CHOOSE <span className="text-gradient-lime">TS SPORTS</span>
+              WHY ATHLETES CHOOSE <span className="text-white">TS SPORTS</span>
             </h2>
             <p className="text-slate-400 text-sm sm:text-base">
               Standard match socks allow your feet to slip inside your boots. TS Sports locks your feet into the boot sole plate for unprecedented agility and comfort.
@@ -194,7 +192,7 @@ export const HomeView: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             <div className="glass-card p-6 rounded-2xl space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-lime-400/10 border border-lime-400/30 flex items-center justify-center text-lime-400">
+              <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/30 flex items-center justify-center text-white">
                 <Zap className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white font-heading">Anti-Slip Silicone Pod Tech</h3>
@@ -204,7 +202,7 @@ export const HomeView: React.FC = () => {
             </div>
 
             <div className="glass-card p-6 rounded-2xl space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-emerald-400/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400">
+              <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
                 <Wind className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white font-heading">3D HydroVent Breathability</h3>
@@ -214,7 +212,7 @@ export const HomeView: React.FC = () => {
             </div>
 
             <div className="glass-card p-6 rounded-2xl space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-teal-400/10 border border-teal-400/30 flex items-center justify-center text-teal-400">
+              <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
                 <Layers className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white font-heading">Ankle Lock & Arch Compression</h3>
@@ -234,7 +232,7 @@ export const HomeView: React.FC = () => {
             </div>
 
             <div className="glass-card p-6 rounded-2xl space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-lime-400/10 border border-lime-400/30 flex items-center justify-center text-lime-400">
+              <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/30 flex items-center justify-center text-white">
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white font-heading">Pro Match & Training Durability</h3>
@@ -244,7 +242,7 @@ export const HomeView: React.FC = () => {
             </div>
 
             <div className="glass-card p-6 rounded-2xl space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-emerald-400/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400">
+              <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
                 <Award className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white font-heading">Modern Pro Athletic Aesthetics</h3>
@@ -262,7 +260,7 @@ export const HomeView: React.FC = () => {
         <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <div className="lg:col-span-7 space-y-4">
-            <span className="text-xs font-bold text-lime-400 uppercase tracking-widest font-heading flex items-center gap-1.5">
+            <span className="text-xs font-bold text-white uppercase tracking-widest font-heading flex items-center gap-1.5">
               <MapPin className="w-4 h-4" />
               24/7 Digital Platform
             </span>
@@ -275,7 +273,7 @@ export const HomeView: React.FC = () => {
             
             <button
               onClick={() => setActiveTab('showrooms')}
-              className="mt-4 px-6 py-3 rounded-xl text-xs font-bold text-slate-950 bg-lime-400 hover:bg-lime-300 flex items-center space-x-2 transition-all font-heading"
+              className="mt-4 px-6 py-3 rounded-xl text-xs font-bold text-slate-950 bg-white hover:bg-slate-300 flex items-center space-x-2 transition-all font-heading"
             >
               <span>Explore Digital Showroom Online</span>
               <ArrowRight className="w-4 h-4" />
@@ -298,7 +296,7 @@ export const HomeView: React.FC = () => {
             </h2>
             <button
               onClick={() => setActiveTab('blogs')}
-              className="text-xs font-bold text-lime-400 hover:underline font-heading flex items-center gap-1"
+              className="text-xs font-bold text-white hover:underline font-heading flex items-center gap-1"
             >
               <span>View All Articles</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -317,7 +315,7 @@ export const HomeView: React.FC = () => {
                 </div>
                 <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
                   <div>
-                    <span className="text-[10px] font-bold text-lime-400 uppercase tracking-wider font-heading">{blog.category}</span>
+                    <span className="text-[10px] font-bold text-white uppercase tracking-wider font-heading">{blog.category}</span>
                     <h3 className="text-sm font-bold text-white mt-1 line-clamp-2 font-heading">{blog.title}</h3>
                     <p className="text-xs text-slate-400 mt-1 line-clamp-2">{blog.summary}</p>
                   </div>

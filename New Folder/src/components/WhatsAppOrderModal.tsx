@@ -58,13 +58,13 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
         {/* Modal Header */}
         <div className="p-5 bg-gradient-to-r from-emerald-950/80 via-slate-900 to-slate-900 border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-              <MessageSquare className="w-5 h-5 fill-emerald-400" />
+            <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+              <MessageSquare className="w-5 h-5 fill-white" />
             </div>
             <div>
               <h3 className="text-lg font-extrabold font-heading text-white flex items-center gap-2">
                 Order via TS Sports WhatsApp
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-sans border border-emerald-500/30">
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-slate-200 font-sans border border-white/20">
                   Direct Order
                 </span>
               </h3>
@@ -92,7 +92,7 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
             />
             <div className="flex-1 min-w-0">
               <h4 className="text-sm font-bold text-white truncate font-heading">{product.name}</h4>
-              <p className="text-xs text-lime-400 font-semibold mt-0.5">SKU: {product.SKU}</p>
+              <p className="text-xs text-white font-semibold mt-0.5">SKU: {product.SKU}</p>
               {product.price && (
                 <p className="text-xs text-slate-300 font-bold mt-1">${product.price.toFixed(2)} per pair</p>
               )}
@@ -112,7 +112,7 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
                     onClick={() => setSelectedColor(color)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
                       selectedColor === color
-                        ? 'bg-lime-400 text-slate-950 border-lime-400 shadow-md shadow-lime-400/20 font-bold'
+                        ? 'bg-white text-slate-950 border-white shadow-md shadow-white/10 font-bold'
                         : 'bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700'
                     }`}
                   >
@@ -136,7 +136,7 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
                     onClick={() => setSelectedSize(size)}
                     className={`px-3 py-2 rounded-lg text-xs font-semibold border text-center transition-all ${
                       selectedSize === size
-                        ? 'bg-lime-400 text-slate-950 border-lime-400 shadow-md shadow-lime-400/20 font-bold'
+                        ? 'bg-white text-slate-950 border-white shadow-md shadow-white/10 font-bold'
                         : 'bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700'
                     }`}
                   >
@@ -179,7 +179,7 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
                 value={customerNotes}
                 onChange={(e) => setCustomerNotes(e.target.value)}
                 placeholder="e.g. Delivery city or club logo printing..."
-                className="w-full px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-lime-400"
+                className="w-full px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-white"
               />
             </div>
           </div>
@@ -192,26 +192,26 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
               </span>
               <button
                 onClick={handleCopyMessage}
-                className="text-[11px] text-lime-400 hover:underline flex items-center gap-1 font-semibold"
+                className="text-[11px] text-white hover:underline flex items-center gap-1 font-semibold"
               >
                 {copied ? (
                   <>
-                    <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-                    <span className="text-emerald-400">Copied!</span>
+                    <CheckCircle2 className="w-3 h-3 text-white" />
+                    <span className="text-white">Copied!</span>
                   </>
                 ) : (
                   <span>Copy Text</span>
                 )}
               </button>
             </div>
-            <pre className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-emerald-300 font-mono whitespace-pre-wrap leading-relaxed shadow-inner">
+            <pre className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-200 font-mono whitespace-pre-wrap leading-relaxed shadow-inner">
               {generatedMessage}
             </pre>
           </div>
 
           {/* Business Info Note */}
           <div className="flex items-start space-x-2 text-[11px] text-slate-400 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
-            <ShieldAlert className="w-4 h-4 text-lime-400 flex-shrink-0 mt-0.5" />
+            <ShieldAlert className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
             <span>
               Clicking "Send to WhatsApp" opens WhatsApp with your prefilled details to connect directly with TS Sports official representative at <strong>03085410293</strong>.
             </span>
@@ -230,7 +230,7 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
           
           <button
             onClick={handleSendToWhatsApp}
-            className="flex-1 py-3 px-5 rounded-xl text-xs font-extrabold text-slate-950 bg-gradient-to-r from-lime-400 via-emerald-400 to-teal-400 hover:from-lime-300 hover:to-emerald-300 shadow-lg shadow-emerald-500/25 flex items-center justify-center space-x-2 transition-all hover:scale-[1.01] active:scale-95"
+            className="flex-1 py-3 px-5 rounded-xl text-xs font-extrabold text-slate-950 bg-gradient-to-r from-white to-slate-300 hover:from-slate-200 hover:to-slate-400 shadow-lg shadow-white/10 flex items-center justify-center space-x-2 transition-all hover:scale-[1.01] active:scale-95"
           >
             <MessageSquare className="w-4 h-4 fill-slate-950" />
             <span>Send Order via WhatsApp</span>

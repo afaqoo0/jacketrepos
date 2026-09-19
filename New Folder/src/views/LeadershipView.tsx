@@ -18,7 +18,7 @@ export const LeadershipView: React.FC = () => {
       
       {/* Header */}
       <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-slate-800 space-y-3 text-center sm:text-left">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-lime-400/10 border border-lime-400/30 text-lime-400 text-xs font-bold font-heading">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 border border-white/30 text-white text-xs font-bold font-heading">
           <Users className="w-3.5 h-3.5" />
           <span>Executive Leadership</span>
         </div>
@@ -32,7 +32,7 @@ export const LeadershipView: React.FC = () => {
 
       {/* Single CEO Profile Showcase */}
       <div className="max-w-4xl mx-auto">
-        <div className="glass-card rounded-3xl overflow-hidden border border-lime-400/50 grid grid-cols-1 md:grid-cols-12 shadow-2xl">
+        <div className="glass-card rounded-3xl overflow-hidden border border-white/50 grid grid-cols-1 md:grid-cols-12 shadow-2xl">
           
           <div className="md:col-span-5 bg-slate-900 overflow-hidden relative aspect-[4/5] md:aspect-auto">
             <img
@@ -43,7 +43,7 @@ export const LeadershipView: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
             
             <div className="absolute top-4 left-4">
-              <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-lime-400 text-slate-950 uppercase font-heading shadow-md">
+              <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-white text-slate-950 uppercase font-heading shadow-md">
                 CEO & Founder
               </span>
             </div>
@@ -52,7 +52,7 @@ export const LeadershipView: React.FC = () => {
           <div className="md:col-span-7 p-8 flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div>
-                <span className="text-xs font-extrabold text-lime-400 uppercase tracking-widest font-heading">
+                <span className="text-xs font-extrabold text-white uppercase tracking-widest font-heading">
                   TS Sports Pakistan Executive Leader
                 </span>
                 <h2 className="text-3xl font-black text-white font-heading mt-1">
@@ -68,8 +68,8 @@ export const LeadershipView: React.FC = () => {
               </p>
 
               <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
-                <h4 className="text-xs font-bold uppercase text-lime-400 font-heading flex items-center gap-1.5">
-                  <Award className="w-4 h-4 text-lime-400" />
+                <h4 className="text-xs font-bold uppercase text-white font-heading flex items-center gap-1.5">
+                  <Award className="w-4 h-4 text-white" />
                   Leadership Vision:
                 </h4>
                 <p className="text-xs text-slate-400 leading-relaxed">
@@ -79,7 +79,7 @@ export const LeadershipView: React.FC = () => {
             </div>
 
             <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-              <span className="flex items-center space-x-1.5 text-lime-400 font-semibold">
+              <span className="flex items-center space-x-1.5 text-white font-semibold">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Verified Executive Profile</span>
               </span>

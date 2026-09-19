@@ -25,7 +25,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
         {/* Modal Header Bar */}
         <div className="px-6 py-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-lime-400/20 text-lime-400 border border-lime-400/30">
+            <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-white/20 text-white border border-white/30">
               {product.category}
             </span>
             <span className="text-xs font-mono text-slate-400">SKU: {product.SKU}</span>
@@ -61,7 +61,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                     key={idx}
                     onClick={() => setSelectedImg(img)}
                     className={`w-20 h-16 rounded-xl overflow-hidden border-2 transition-all flex-shrink-0 ${
-                      selectedImg === img ? 'border-lime-400 shadow-md shadow-lime-400/20 scale-105' : 'border-slate-800 opacity-60 hover:opacity-100'
+                      selectedImg === img ? 'border-white shadow-md shadow-white/10 scale-105' : 'border-slate-800 opacity-60 hover:opacity-100'
                     }`}
                   >
                     <img src={img} alt="" className="w-full h-full object-cover" />
@@ -72,8 +72,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
 
             {/* Feature highlights callout */}
             <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 space-y-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-lime-400 font-heading flex items-center gap-1.5">
-                <Zap className="w-4 h-4 fill-lime-400" />
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white font-heading flex items-center gap-1.5">
+                <Zap className="w-4 h-4 fill-white" />
                 Performance Specs:
               </h4>
               <div className="text-xs text-slate-300 space-y-1">
@@ -94,7 +94,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                 
                 {product.price && (
                   <div className="mt-3 flex items-baseline space-x-3">
-                    <span className="text-3xl font-extrabold text-lime-400 font-heading">
+                    <span className="text-3xl font-extrabold text-white font-heading">
                       ${product.price.toFixed(2)}
                     </span>
                     {product.originalPrice && (
@@ -102,7 +102,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                         ${product.originalPrice.toFixed(2)}
                       </span>
                     )}
-                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-white border border-white/20">
                       Direct WhatsApp Rate
                     </span>
                   </div>
@@ -122,7 +122,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                   <ul className="grid grid-cols-1 gap-1.5 text-xs text-slate-300">
                     {product.materialSpecs.map((spec, i) => (
                       <li key={i} className="flex items-center space-x-2">
-                        <Check className="w-4 h-4 text-lime-400 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-white flex-shrink-0" />
                         <span>{spec}</span>
                       </li>
                     ))}
@@ -143,7 +143,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                         onClick={() => setSelectedColor(c)}
                         className={`px-3 py-1 rounded-lg text-xs font-semibold border transition-all ${
                           selectedColor === c 
-                            ? 'bg-lime-400 text-slate-950 font-bold border-lime-400' 
+                            ? 'bg-white text-slate-950 font-bold border-white' 
                             : 'bg-slate-900 text-slate-300 border-slate-800'
                         }`}
                       >
@@ -167,7 +167,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                         onClick={() => setSelectedSize(s)}
                         className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
                           selectedSize === s 
-                            ? 'bg-lime-400 text-slate-950 font-bold border-lime-400' 
+                            ? 'bg-white text-slate-950 font-bold border-white' 
                             : 'bg-slate-900 text-slate-300 border-slate-800'
                         }`}
                       >
@@ -183,14 +183,14 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
             <div className="pt-4 border-t border-slate-800 space-y-3">
               <button
                 onClick={handleOrderClick}
-                className="w-full py-4 px-6 rounded-2xl text-sm font-extrabold text-slate-950 bg-gradient-to-r from-lime-400 via-emerald-400 to-teal-400 hover:from-lime-300 hover:to-emerald-300 shadow-xl shadow-lime-500/20 flex items-center justify-center space-x-2 transition-all transform hover:scale-[1.01] active:scale-95"
+                className="w-full py-4 px-6 rounded-2xl text-sm font-extrabold text-slate-950 bg-gradient-to-r from-white to-slate-300 hover:from-slate-200 hover:to-slate-400 shadow-xl shadow-white/10 flex items-center justify-center space-x-2 transition-all transform hover:scale-[1.01] active:scale-95"
               >
                 <MessageSquare className="w-5 h-5 fill-slate-950" />
                 <span>Order Now via WhatsApp (03085410293)</span>
               </button>
 
               <p className="text-[11px] text-center text-slate-400 flex items-center justify-center gap-1">
-                <ShieldCheck className="w-4 h-4 text-emerald-400 inline" />
+                <ShieldCheck className="w-4 h-4 text-white inline" />
                 Direct WhatsApp link generates a prefilled order message. No credit card required.
               </p>
             </div>
