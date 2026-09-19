@@ -10,7 +10,7 @@ interface ProductDetailModalProps {
 
 export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product, onClose }) => {
   const { setWhatsAppModalProduct } = useStore();
-  const [selectedImg, setSelectedImg] = useState<string>(product.images[0] || '/images/socks_white.jpg');
+  const [selectedImg, setSelectedImg] = useState<string>(product.images[0] || '/hero-pairs.jpg');
   const [selectedColor, setSelectedColor] = useState<string>(product.colors[0] || '');
   const [selectedSize, setSelectedSize] = useState<string>(product.sizes[0] || '');
 

@@ -86,7 +86,7 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
           {/* Selected Product Summary */}
           <div className="flex items-center space-x-4 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
             <img
-              src={product.images[0] || '/images/socks_white.jpg'}
+              src={product.images[0] || '/hero-pairs.jpg'}
               alt={product.name}
               className="w-16 h-16 object-cover rounded-lg border border-slate-700"
             />

@@ -40,7 +40,7 @@ export const AboutView: React.FC = () => {
 
         <div className="lg:col-span-5 relative">
           <div className="aspect-[4/3] rounded-3xl overflow-hidden border border-slate-800 shadow-2xl glass-card">
-            <img src="/images/hero.jpg" alt="TS Sports Brand Story" className="w-full h-full object-cover" />
+            <img src="/hero-collage.jpg" alt="TS Sports Brand Story" className="w-full h-full object-cover" />
           </div>
         </div>
 

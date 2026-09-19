@@ -281,7 +281,7 @@ export const HomeView: React.FC = () => {
           </div>
 
           <div className="lg:col-span-5 rounded-2xl overflow-hidden border border-slate-800 aspect-[16/10]">
-            <img src="/images/showroom.jpg" alt="TS Sports Digital Showroom" className="w-full h-full object-cover" />
+            <img src="/hero-pairs.jpg" alt="TS Sports Digital Showroom" className="w-full h-full object-cover" />
           </div>
 
         </div>
@@ -311,7 +311,7 @@ export const HomeView: React.FC = () => {
                 className="glass-card rounded-2xl overflow-hidden cursor-pointer flex flex-col justify-between"
               >
                 <div className="aspect-[16/9] bg-slate-900 overflow-hidden">
-                  <img src={blog.image || '/images/hero.jpg'} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                  <img src={blog.image || '/hero-collage.jpg'} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                 </div>
                 <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
                   <div>

@@ -27,7 +27,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       {/* Product Image Section */}
       <div className="relative aspect-[4/3] bg-slate-900 overflow-hidden">
         <img
-          src={product.images[0] || '/images/socks_white.jpg'}
+          src={product.images[0] || '/hero-pairs.jpg'}
           alt={product.name}
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
           loading="lazy"

@@ -99,13 +99,6 @@ export const Navbar: React.FC = () => {
         {/* Action Buttons */}
         <div className="hidden md:flex items-center space-x-3">
           <button
-            onClick={() => handleNavClick('products')}
-            className="px-4 py-2 text-xs font-semibold text-slate-200 bg-slate-800/80 hover:bg-slate-700 rounded-lg border border-slate-700 transition-colors"
-          >
-            Products
-          </button>
-          
-          <button
             onClick={openDirectWhatsApp}
             className="px-4 py-2 text-xs font-extrabold text-slate-950 bg-gradient-to-r from-white to-slate-300 hover:from-slate-200 hover:to-slate-400 rounded-lg shadow-md shadow-white/10 flex items-center space-x-1.5 transition-all hover:scale-[1.02] active:scale-95"
           >

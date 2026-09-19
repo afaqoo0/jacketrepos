@@ -82,7 +82,7 @@ export const AdminDashboardView: React.FC = () => {
     content: '',
     author: 'Kashif Tufail',
     category: 'Sports Science',
-    image: '/images/hero.jpg',
+    image: '/hero-collage.jpg',
     status: 'published' as Blog['status'],
   });
 
@@ -225,7 +225,7 @@ export const AdminDashboardView: React.FC = () => {
         content: '',
         author: 'Kashif Tufail',
         category: 'Sports Science',
-        image: '/images/hero.jpg',
+        image: '/hero-collage.jpg',
         status: 'published',
       });
     }
@@ -716,7 +716,7 @@ export const AdminDashboardView: React.FC = () => {
                           src={img}
                           alt={`img-${idx}`}
                           className="w-full h-full object-cover rounded-xl border border-slate-700"
-                          onError={(e) => { (e.target as HTMLImageElement).src = '/images/socks_white.jpg'; }}
+                          onError={(e) => { (e.target as HTMLImageElement).src = '/hero-pairs.jpg'; }}
                         />
                         <button
                           type="button"

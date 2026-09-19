@@ -59,7 +59,7 @@ export const BlogsView: React.FC = () => {
           >
             <div className="aspect-[16/9] bg-slate-900 overflow-hidden relative">
               <img
-                src={blog.image || '/images/hero.jpg'}
+                src={blog.image || '/hero-collage.jpg'}
                 alt={blog.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />

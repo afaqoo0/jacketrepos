@@ -88,7 +88,7 @@ export const ShowroomsView: React.FC = () => {
           <div className="glass-panel p-4 rounded-3xl border border-slate-800 space-y-4">
             <div className="aspect-[16/10] rounded-2xl overflow-hidden relative border border-slate-800 shadow-xl">
               <img
-                src="/images/showroom.jpg"
+                src="/hero-pairs.jpg"
                 alt="TS Sports Digital Showroom"
                 className="w-full h-full object-cover"
               />
