@@ -12,13 +12,12 @@ import {
   MessageSquare, 
   Menu, 
   X, 
-  Lock, 
   ChevronRight,
   Zap
 } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
-  const { activeTab, setActiveTab, settings, isAdminAuthenticated } = useStore();
+  const { activeTab, setActiveTab, settings } = useStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems: { id: ActiveTab; label: string; icon: React.ReactNode }[] = [
@@ -54,14 +53,7 @@ export const Navbar: React.FC = () => {
             <span className="font-semibold text-slate-200">{settings.slogan}</span>
           </div>
           <div className="hidden sm:flex items-center space-x-4">
-            <button 
-              onClick={() => handleNavClick(isAdminAuthenticated ? 'admin-dashboard' : 'admin-login')}
-              className="flex items-center space-x-1.5 text-slate-400 hover:text-white transition-colors text-xs"
-            >
-              <Lock className="w-3 h-3" />
-              <span>{isAdminAuthenticated ? 'Admin Panel' : 'Admin Portal'}</span>
-            </button>
-            <span className="text-slate-700">|</span>
+
             <span className="text-slate-400">WhatsApp Order: <strong className="text-white">03085410293</strong></span>
           </div>
         </div>
@@ -175,13 +167,7 @@ export const Navbar: React.FC = () => {
               <span>Order via WhatsApp (03085410293)</span>
             </button>
 
-            <button
-              onClick={() => handleNavClick(isAdminAuthenticated ? 'admin-dashboard' : 'admin-login')}
-              className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold text-slate-400 bg-slate-900 border border-slate-800 flex items-center justify-center space-x-2"
-            >
-              <Lock className="w-3.5 h-3.5" />
-              <span>{isAdminAuthenticated ? 'Go to Admin Dashboard' : 'Admin Login Area'}</span>
-            </button>
+
           </div>
         </div>
       )}

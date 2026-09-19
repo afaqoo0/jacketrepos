@@ -103,7 +103,17 @@ const defaultSettings: SiteSettings = {
 const StoreContext = createContext<StoreContextType | undefined>(undefined);
 
 export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [activeTab, setActiveTab] = useState<ActiveTab>('home');
+  const [activeTab, setActiveTab] = useState<ActiveTab>(
+    window.location.pathname.startsWith('/admin') ? 'admin-dashboard' : 'home'
+  );
+  
+  // Cleanup URL if they came in via /admin so it doesn't look weird if they navigate away
+  useEffect(() => {
+    if (window.location.pathname.startsWith('/admin')) {
+      window.history.replaceState({}, '', '/');
+    }
+  }, []);
+
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedBlog, setSelectedBlog] = useState<Blog | null>(null);
   const [whatsAppModalProduct, setWhatsAppModalProduct] = useState<Product | null>(null);
@@ -184,17 +194,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         return true;
       }
     } catch (error) {
-      console.warn('API Auth failed, attempting offline login fallback:', error);
-    }
-
-    // Fallback credential check for offline demo
-    if (
-      (email === 'sportspakistan10@gmail.com' || email === 'admin@tssports.pk' || email === 'admin') &&
-      (pass === 'Password123!' || pass === 'admin123' || pass === 'admin')
-    ) {
-      setIsAdminAuthenticated(true);
-      setAdminUser(email);
-      return true;
+      console.warn('API Auth failed:', error);
     }
 
     return false;

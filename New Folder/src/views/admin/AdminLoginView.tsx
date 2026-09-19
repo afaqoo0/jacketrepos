@@ -3,7 +3,7 @@ import { useStore } from '../../context/StoreContext';
 import { Mail, Key, ArrowRight, AlertCircle, Loader2 } from 'lucide-react';
 
 export const AdminLoginView: React.FC = () => {
-  const { loginAdmin, setActiveTab, isBackendConnected } = useStore();
+  const { loginAdmin, setActiveTab } = useStore();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -19,22 +19,13 @@ export const AdminLoginView: React.FC = () => {
       if (success) {
         setActiveTab('admin-dashboard');
       } else {
-        setError(
-          isBackendConnected
-            ? 'Invalid email or password.'
-            : 'Invalid credentials. Use sportspakistan10@gmail.com and password admin123'
-        );
+        setError('Invalid email or password.');
       }
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'An error occurred during sign in');
     } finally {
       setLoading(false);
     }
-  };
-
-  const fillDefaultCredentials = () => {
-    setEmail('sportspakistan10@gmail.com');
-    setPassword('admin123');
   };
 
   return (
@@ -49,25 +40,8 @@ export const AdminLoginView: React.FC = () => {
             TS SPORTS ADMIN PORTAL
           </h2>
           <p className="text-xs text-slate-400">
-            {isBackendConnected
-              ? 'Secure access for TS Sports management'
-              : 'Authenticated access for TS Sports product & site management'}
+            Secure access for TS Sports management
           </p>
-        </div>
-
-        {/* Credentials Quick Button */}
-        <div className="p-3 rounded-xl bg-white/10 border border-white/30 flex items-center justify-between text-xs">
-          <div className="space-y-0.5">
-            <span className="font-bold text-white font-heading block">Admin Credentials:</span>
-            <span className="text-slate-300 block font-mono text-[11px]">sportspakistan10@gmail.com / admin123</span>
-          </div>
-          <button
-            type="button"
-            onClick={fillDefaultCredentials}
-            className="px-3 py-1.5 rounded-lg bg-white text-slate-950 text-[11px] font-bold hover:bg-slate-300 transition-colors font-heading"
-          >
-            Auto-fill
-          </button>
         </div>
 
         {error && (
@@ -78,7 +52,7 @@ export const AdminLoginView: React.FC = () => {
         )}
 
         {/* Login Form */}
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form onSubmit={handleLogin} className="space-y-4" autoComplete="off">
           <div>
             <label className="block text-xs font-bold uppercase text-slate-300 mb-1 font-heading">
               Admin Email Address
@@ -90,7 +64,7 @@ export const AdminLoginView: React.FC = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="sportspakistan10@gmail.com"
+                placeholder="admin@example.com"
                 className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-white"
               />
             </div>
