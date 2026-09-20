@@ -95,11 +95,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                 {product.price && (
                   <div className="mt-3 flex items-baseline space-x-3">
                     <span className="text-3xl font-extrabold text-white font-heading">
-                      ${product.price.toFixed(2)}
+                      Rs {product.price.toFixed(2)}
                     </span>
                     {product.originalPrice && (
                       <span className="text-base text-slate-500 line-through">
-                        ${product.originalPrice.toFixed(2)}
+                        Rs {product.originalPrice.toFixed(2)}
                       </span>
                     )}
                     <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-white border border-white/20">

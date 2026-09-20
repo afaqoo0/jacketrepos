@@ -121,7 +121,7 @@ export const HomeView: React.FC = () => {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-white font-heading">TS Sports Pro Grip 2.0</h3>
-                  <span className="text-lg font-extrabold text-white font-heading">$24.99</span>
+                  <span className="text-lg font-extrabold text-white font-heading">Rs 2499</span>
                 </div>
                 <p className="text-xs text-slate-400">
                   Dual-density silicone pod matrix on high-torque footbed zones.

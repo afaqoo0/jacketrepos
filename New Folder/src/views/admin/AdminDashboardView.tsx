@@ -425,7 +425,7 @@ export const AdminDashboardView: React.FC = () => {
                       <h4 className="text-sm font-bold text-white font-heading">{product.name}</h4>
                       {product.featured && <span className="px-2 py-0.5 rounded-md bg-white/20 text-white text-[10px] font-bold">Featured</span>}
                     </div>
-                    <p className="text-xs text-slate-400">SKU: {product.SKU} • Category: {product.category} • ${product.price}</p>
+                    <p className="text-xs text-slate-400">SKU: {product.SKU} • Category: {product.category} • Rs {product.price}</p>
                   </div>
                 </div>
 
@@ -686,7 +686,7 @@ export const AdminDashboardView: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block font-bold text-slate-300 uppercase mb-1">Price ($)</label>
+                  <label className="block font-bold text-slate-300 uppercase mb-1">Price (Rs)</label>
                   <input type="number" step="0.01" value={productForm.price} onChange={(e) => setProductForm({ ...productForm, price: Number(e.target.value) })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white" />
                 </div>
               </div>

@@ -94,7 +94,7 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
               <h4 className="text-sm font-bold text-white truncate font-heading">{product.name}</h4>
               <p className="text-xs text-white font-semibold mt-0.5">SKU: {product.SKU}</p>
               {product.price && (
-                <p className="text-xs text-slate-300 font-bold mt-1">${product.price.toFixed(2)} per pair</p>
+                <p className="text-xs text-slate-300 font-bold mt-1">Rs {product.price.toFixed(2)} per pair</p>
               )}
             </div>
           </div>
