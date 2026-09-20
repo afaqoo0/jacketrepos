@@ -9,7 +9,7 @@ export const LeadershipView: React.FC = () => {
     name: 'Kashif Tufail',
     designation: 'Chief Executive Officer & Founder',
     bio: 'Visionary founder and CEO of TS Sports. Kashif Tufail leads the brand in pioneering high-performance athletic apparel, precision grip gear, and global sporting goods innovation.',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
+    image: '/ceo.jpg',
     displayOrder: 1,
   };
 
@@ -36,7 +36,7 @@ export const LeadershipView: React.FC = () => {
           
           <div className="md:col-span-5 bg-slate-900 overflow-hidden relative aspect-[4/5] md:aspect-auto">
             <img
-              src={ceo.image || 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80'}
+              src={(ceo.image && ceo.image.includes('unsplash.com')) ? '/ceo.jpg' : (ceo.image || '/ceo.jpg')}
               alt={ceo.name}
               className="w-full h-full object-cover"
             />
