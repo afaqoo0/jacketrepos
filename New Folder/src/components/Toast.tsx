@@ -31,8 +31,8 @@ export const Toast: React.FC<ToastProps> = ({ toast, onClose, duration = 4000 })
       <div
         className={`flex items-center space-x-3 px-5 py-3.5 rounded-2xl shadow-2xl backdrop-blur-md border ${
           isSuccess
-            ? 'white/90 border-slate-300/40 slate-950'
-            : 'white/90 border-red-500/40 text-red-400'
+            ? 'bg-slate-900/90 border-slate-300/40 text-white'
+            : 'bg-slate-900/90 border-red-500/40 text-red-400'
         }`}
       >
         {isSuccess ? (
@@ -40,10 +40,10 @@ export const Toast: React.FC<ToastProps> = ({ toast, onClose, duration = 4000 })
         ) : (
           <AlertCircle className="w-5 h-5 flex-shrink-0" />
         )}
-        <span className="text-sm font-medium slate-900">{toast.message}</span>
+        <span className="text-sm font-medium text-slate-100">{toast.message}</span>
         <button
           onClick={onClose}
-          className="p-1 rounded-lg hover:slate-100 slate-600 hover:slate-800 transition-colors"
+          className="p-1 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition-colors"
         >
           <X className="w-4 h-4" />
         </button>

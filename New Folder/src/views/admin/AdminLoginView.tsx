@@ -30,16 +30,16 @@ export const AdminLoginView: React.FC = () => {
 
   return (
     <div className="min-h-[75vh] flex items-center justify-center p-4">
-      <div className="w-full max-w-md glass-panel p-8 rounded-3xl border slate-200 space-y-6 shadow-2xl">
+      <div className="w-full max-w-md glass-panel p-8 rounded-3xl border border-slate-800 space-y-6 shadow-2xl">
         
         {/* Header */}
         <div className="text-center space-y-3">
-          <img src="/ts-logo.jpg" alt="TS Sports Logo" className="w-14 h-14 rounded-2xl object-cover mx-auto shadow-lg shadow-slate-900/20" />
+          <img src="/ts-logo.jpg" alt="TS Sports Logo" className="w-14 h-14 rounded-2xl object-cover mx-auto shadow-lg shadow-white/10" />
           
-          <h2 className="text-2xl font-black slate-950 font-heading">
+          <h2 className="text-2xl font-black text-white font-heading">
             TS SPORTS ADMIN PORTAL
           </h2>
-          <p className="text-xs slate-600">
+          <p className="text-xs text-slate-400">
             Secure access for TS Sports management
           </p>
         </div>
@@ -54,7 +54,7 @@ export const AdminLoginView: React.FC = () => {
         {/* Login Form */}
         <form onSubmit={handleLogin} className="space-y-4" autoComplete="off">
           <div>
-            <label className="block text-xs font-bold uppercase slate-700 mb-1 font-heading">
+            <label className="block text-xs font-bold uppercase text-slate-300 mb-1 font-heading">
               Admin Email Address
             </label>
             <div className="relative">
@@ -65,13 +65,13 @@ export const AdminLoginView: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="admin@example.com"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl white border slate-200 text-xs slate-950 placeholder-slate-500 focus:outline-none focus:slate-950"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-white"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase slate-700 mb-1 font-heading">
+            <label className="block text-xs font-bold uppercase text-slate-300 mb-1 font-heading">
               Admin Password
             </label>
             <div className="relative">
@@ -82,7 +82,7 @@ export const AdminLoginView: React.FC = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl white border slate-200 text-xs slate-950 placeholder-slate-500 focus:outline-none focus:slate-950"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-white"
               />
             </div>
           </div>
@@ -90,11 +90,11 @@ export const AdminLoginView: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3.5 rounded-xl text-xs font-extrabold slate-950 bg-gradient-to-r white to-slate-700 hover:from-slate-800 hover:to-slate-600 shadow-lg shadow-slate-900/20 flex items-center justify-center space-x-2 transition-all font-heading disabled:opacity-50"
+            className="w-full py-3.5 rounded-xl text-xs font-extrabold text-slate-950 bg-gradient-to-r from-white to-slate-300 hover:from-slate-200 hover:to-slate-400 shadow-lg shadow-white/10 flex items-center justify-center space-x-2 transition-all font-heading disabled:opacity-50"
           >
             {loading ? (
               <>
-                <Loader2 className="w-4 h-4 animate-spin white" />
+                <Loader2 className="w-4 h-4 animate-spin text-slate-950" />
                 <span>Authenticating...</span>
               </>
             ) : (

@@ -265,16 +265,16 @@ export const AdminDashboardView: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       
       {/* Top Header Bar */}
-      <div className="glass-panel p-6 rounded-3xl border slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="glass-panel p-6 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-xl slate-950 white flex items-center justify-center font-bold font-heading">
+          <div className="w-10 h-10 rounded-xl bg-white text-slate-950 flex items-center justify-center font-bold font-heading">
             <ShieldCheck className="w-6 h-6 stroke-[2.5]" />
           </div>
           <div>
             <div className="flex items-center space-x-2">
-              <h1 className="text-xl font-extrabold slate-950 font-heading">TS SPORTS ADMIN MANAGEMENT</h1>
+              <h1 className="text-xl font-extrabold text-white font-heading">TS SPORTS ADMIN MANAGEMENT</h1>
               {isBackendConnected ? (
-                <span className="px-2 py-0.5 rounded-full slate-950/10 slate-950 text-[10px] font-bold flex items-center gap-1 border slate-900/20">
+                <span className="px-2 py-0.5 rounded-full bg-white/10 text-white text-[10px] font-bold flex items-center gap-1 border border-white/20">
                   <Database className="w-3 h-3" /> PostgreSQL (Prisma)
                 </span>
               ) : (
@@ -283,7 +283,7 @@ export const AdminDashboardView: React.FC = () => {
                 </span>
               )}
             </div>
-            <p className="text-xs slate-600">Authenticated Session: <strong className="slate-950">{adminUser}</strong></p>
+            <p className="text-xs text-slate-400">Authenticated Session: <strong className="text-white">{adminUser}</strong></p>
           </div>
         </div>
 
@@ -297,7 +297,7 @@ export const AdminDashboardView: React.FC = () => {
       </div>
 
       {/* Admin Sub-Navigation Tabs */}
-      <div className="flex items-center space-x-2 overflow-x-auto pb-2 border-b slate-200">
+      <div className="flex items-center space-x-2 overflow-x-auto pb-2 border-b border-slate-800">
         {[
           { id: 'overview', label: 'Dashboard Overview', icon: <Sparkles className="w-4 h-4" /> },
           { id: 'products', label: `Products (${products.length})`, icon: <ShoppingBag className="w-4 h-4" /> },
@@ -313,8 +313,8 @@ export const AdminDashboardView: React.FC = () => {
             onClick={() => setActiveAdminTab(tab.id as AdminTab)}
             className={`px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap flex items-center space-x-1.5 transition-all ${
               activeAdminTab === tab.id
-                ? 'slate-950 white font-heading shadow-md shadow-slate-900/20'
-                : 'white/80 slate-700 hover:slate-100 border slate-200'
+                ? 'bg-white text-slate-950 font-heading shadow-md shadow-white/10'
+                : 'bg-slate-900/80 text-slate-300 hover:bg-slate-800 border border-slate-800'
             }`}
           >
             {tab.icon}
@@ -329,70 +329,70 @@ export const AdminDashboardView: React.FC = () => {
           
           {/* Metric Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="glass-card p-6 rounded-2xl space-y-2 border slate-200">
-              <span className="text-xs font-bold uppercase slate-600 font-heading">Total Products</span>
+            <div className="glass-card p-6 rounded-2xl space-y-2 border border-slate-800">
+              <span className="text-xs font-bold uppercase text-slate-400 font-heading">Total Products</span>
               <div className="flex items-baseline justify-between">
-                <span className="text-3xl font-black slate-950 font-heading">{products.length}</span>
-                <span className="text-xs slate-950 font-bold">{products.filter((p) => p.status === 'active').length} Active</span>
+                <span className="text-3xl font-black text-white font-heading">{products.length}</span>
+                <span className="text-xs text-white font-bold">{products.filter((p) => p.status === 'active').length} Active</span>
               </div>
             </div>
 
-            <div className="glass-card p-6 rounded-2xl space-y-2 border slate-200">
-              <span className="text-xs font-bold uppercase slate-600 font-heading">Featured Showcase</span>
+            <div className="glass-card p-6 rounded-2xl space-y-2 border border-slate-800">
+              <span className="text-xs font-bold uppercase text-slate-400 font-heading">Featured Showcase</span>
               <div className="flex items-baseline justify-between">
-                <span className="text-3xl font-black slate-950 font-heading">{products.filter((p) => p.featured).length}</span>
-                <span className="text-xs slate-600">On Home Page</span>
+                <span className="text-3xl font-black text-white font-heading">{products.filter((p) => p.featured).length}</span>
+                <span className="text-xs text-slate-400">On Home Page</span>
               </div>
             </div>
 
-            <div className="glass-card p-6 rounded-2xl space-y-2 border slate-200">
-              <span className="text-xs font-bold uppercase slate-600 font-heading">Published Articles</span>
+            <div className="glass-card p-6 rounded-2xl space-y-2 border border-slate-800">
+              <span className="text-xs font-bold uppercase text-slate-400 font-heading">Published Articles</span>
               <div className="flex items-baseline justify-between">
-                <span className="text-3xl font-black slate-950 font-heading">{blogs.length}</span>
-                <span className="text-xs slate-950 font-bold">Active Blogs</span>
+                <span className="text-3xl font-black text-white font-heading">{blogs.length}</span>
+                <span className="text-xs text-white font-bold">Active Blogs</span>
               </div>
             </div>
 
-            <div className="glass-card p-6 rounded-2xl space-y-2 border slate-200">
-              <span className="text-xs font-bold uppercase slate-600 font-heading">Customer Inquiries</span>
+            <div className="glass-card p-6 rounded-2xl space-y-2 border border-slate-800">
+              <span className="text-xs font-bold uppercase text-slate-400 font-heading">Customer Inquiries</span>
               <div className="flex items-baseline justify-between">
-                <span className="text-3xl font-black slate-950 font-heading">{inquiries.length}</span>
-                <span className="text-xs slate-950 font-bold">{inquiries.filter((i) => i.status === 'new').length} New</span>
+                <span className="text-3xl font-black text-white font-heading">{inquiries.length}</span>
+                <span className="text-xs text-white font-bold">{inquiries.filter((i) => i.status === 'new').length} New</span>
               </div>
             </div>
           </div>
 
           {/* Quick Actions & Recent Items */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="glass-panel p-6 rounded-3xl border slate-200 space-y-4">
-              <h3 className="text-base font-bold slate-950 font-heading flex items-center gap-2">
-                <ShoppingBag className="w-5 h-5 slate-950" />
+            <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-4">
+              <h3 className="text-base font-bold text-white font-heading flex items-center gap-2">
+                <ShoppingBag className="w-5 h-5 text-white" />
                 <span>Quick Actions</span>
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 <button
                   onClick={() => handleOpenProductModal()}
-                  className="p-4 rounded-2xl slate-950 white font-bold text-xs flex items-center justify-center space-x-2 hover:bg-slate-300 transition-colors font-heading"
+                  className="p-4 rounded-2xl bg-white text-slate-950 font-bold text-xs flex items-center justify-center space-x-2 hover:bg-slate-300 transition-colors font-heading"
                 >
                   <Plus className="w-4 h-4" />
                   <span>Add New Product</span>
                 </button>
                 <button
                   onClick={() => handleOpenBlogModal()}
-                  className="p-4 rounded-2xl slate-100 slate-950 font-bold text-xs flex items-center justify-center space-x-2 hover:slate-200 transition-colors font-heading"
+                  className="p-4 rounded-2xl bg-slate-800 text-white font-bold text-xs flex items-center justify-center space-x-2 hover:bg-slate-700 transition-colors font-heading"
                 >
-                  <Plus className="w-4 h-4 slate-950" />
+                  <Plus className="w-4 h-4 text-white" />
                   <span>Create Blog Post</span>
                 </button>
               </div>
             </div>
 
-            <div className="glass-panel p-6 rounded-3xl border slate-200 space-y-3">
-              <h3 className="text-base font-bold slate-950 font-heading">Database Info</h3>
-              <p className="text-xs slate-700 leading-relaxed">
-                Backend Status: <strong className="slate-950">{isBackendConnected ? 'Connected to PostgreSQL (Prisma)' : 'Offline / Demo Mode'}</strong>.
+            <div className="glass-panel p-6 rounded-3xl border border-slate-800 space-y-3">
+              <h3 className="text-base font-bold text-white font-heading">Database Info</h3>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Backend Status: <strong className="text-white">{isBackendConnected ? 'Connected to PostgreSQL (Prisma)' : 'Offline / Demo Mode'}</strong>.
               </p>
-              <p className="text-xs slate-600">
+              <p className="text-xs text-slate-400">
                 All data, images, blogs, showrooms, and settings are managed securely with Row Level Security (RLS) policies.
               </p>
             </div>
@@ -405,10 +405,10 @@ export const AdminDashboardView: React.FC = () => {
       {activeAdminTab === 'products' && (
         <div className="space-y-6 animate-in fade-in duration-200">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold slate-950 font-heading">Product Catalog Management</h2>
+            <h2 className="text-xl font-bold text-white font-heading">Product Catalog Management</h2>
             <button
               onClick={() => handleOpenProductModal()}
-              className="px-4 py-2 rounded-xl slate-950 white text-xs font-bold flex items-center space-x-2 hover:bg-slate-300 transition-colors font-heading"
+              className="px-4 py-2 rounded-xl bg-white text-slate-950 text-xs font-bold flex items-center space-x-2 hover:bg-slate-300 transition-colors font-heading"
             >
               <Plus className="w-4 h-4" />
               <span>Add Product</span>
@@ -417,28 +417,28 @@ export const AdminDashboardView: React.FC = () => {
 
           <div className="grid grid-cols-1 gap-4">
             {products.map((product) => (
-              <div key={product.id} className="glass-card p-4 rounded-2xl border slate-200 flex items-center justify-between gap-4">
+              <div key={product.id} className="glass-card p-4 rounded-2xl border border-slate-800 flex items-center justify-between gap-4">
                 <div className="flex items-center space-x-4">
-                  <img src={product.images[0]} alt={product.name} className="w-14 h-14 rounded-xl object-cover border slate-200" />
+                  <img src={product.images[0]} alt={product.name} className="w-14 h-14 rounded-xl object-cover border border-slate-800" />
                   <div>
                     <div className="flex items-center space-x-2">
-                      <h4 className="text-sm font-bold slate-950 font-heading">{product.name}</h4>
-                      {product.featured && <span className="px-2 py-0.5 rounded-md slate-950/20 slate-950 text-[10px] font-bold">Featured</span>}
+                      <h4 className="text-sm font-bold text-white font-heading">{product.name}</h4>
+                      {product.featured && <span className="px-2 py-0.5 rounded-md bg-white/20 text-white text-[10px] font-bold">Featured</span>}
                     </div>
-                    <p className="text-xs slate-600">SKU: {product.SKU} • Category: {product.category} • Rs {product.price}</p>
+                    <p className="text-xs text-slate-400">SKU: {product.SKU} • Category: {product.category} • Rs {product.price}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-2">
                   <button
                     onClick={() => handleOpenProductModal(product)}
-                    className="p-2 rounded-xl slate-100 slate-700 hover:slate-950 hover:slate-200 transition-colors"
+                    className="p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
                   >
                     <Edit3 className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => deleteProduct(product.id)}
-                    className="p-2 rounded-xl slate-100 text-rose-400 hover:bg-rose-500/20 transition-colors"
+                    className="p-2 rounded-xl bg-slate-800 text-rose-400 hover:bg-rose-500/20 transition-colors"
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>
@@ -453,10 +453,10 @@ export const AdminDashboardView: React.FC = () => {
       {activeAdminTab === 'blogs' && (
         <div className="space-y-6 animate-in fade-in duration-200">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold slate-950 font-heading">Blog Posts & News Articles</h2>
+            <h2 className="text-xl font-bold text-white font-heading">Blog Posts & News Articles</h2>
             <button
               onClick={() => handleOpenBlogModal()}
-              className="px-4 py-2 rounded-xl slate-950 white text-xs font-bold flex items-center space-x-2 hover:bg-slate-300 transition-colors font-heading"
+              className="px-4 py-2 rounded-xl bg-white text-slate-950 text-xs font-bold flex items-center space-x-2 hover:bg-slate-300 transition-colors font-heading"
             >
               <Plus className="w-4 h-4" />
               <span>Create Blog Post</span>
@@ -465,25 +465,25 @@ export const AdminDashboardView: React.FC = () => {
 
           <div className="grid grid-cols-1 gap-4">
             {blogs.map((blog) => (
-              <div key={blog.id} className="glass-card p-4 rounded-2xl border slate-200 flex items-center justify-between gap-4">
+              <div key={blog.id} className="glass-card p-4 rounded-2xl border border-slate-800 flex items-center justify-between gap-4">
                 <div className="flex items-center space-x-4">
-                  <img src={blog.image} alt={blog.title} className="w-14 h-14 rounded-xl object-cover border slate-200" />
+                  <img src={blog.image} alt={blog.title} className="w-14 h-14 rounded-xl object-cover border border-slate-800" />
                   <div>
-                    <h4 className="text-sm font-bold slate-950 font-heading">{blog.title}</h4>
-                    <p className="text-xs slate-600">By {blog.author} • Category: {blog.category} • {blog.publishedAt}</p>
+                    <h4 className="text-sm font-bold text-white font-heading">{blog.title}</h4>
+                    <p className="text-xs text-slate-400">By {blog.author} • Category: {blog.category} • {blog.publishedAt}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-2">
                   <button
                     onClick={() => handleOpenBlogModal(blog)}
-                    className="p-2 rounded-xl slate-100 slate-700 hover:slate-950 hover:slate-200 transition-colors"
+                    className="p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
                   >
                     <Edit3 className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => deleteBlog(blog.id)}
-                    className="p-2 rounded-xl slate-100 text-rose-400 hover:bg-rose-500/20 transition-colors"
+                    className="p-2 rounded-xl bg-slate-800 text-rose-400 hover:bg-rose-500/20 transition-colors"
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>
@@ -497,14 +497,14 @@ export const AdminDashboardView: React.FC = () => {
       {/* SHOWROOMS TAB */}
       {activeAdminTab === 'showrooms' && (
         <div className="space-y-6 animate-in fade-in duration-200">
-          <h2 className="text-xl font-bold slate-950 font-heading">Digital Showrooms Platform</h2>
+          <h2 className="text-xl font-bold text-white font-heading">Digital Showrooms Platform</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {showrooms.map((sr) => (
-              <div key={sr.id} className="glass-card p-6 rounded-2xl border slate-200 space-y-3">
-                <h4 className="text-base font-bold slate-950 font-heading">{sr.name}</h4>
-                <p className="text-xs slate-700">{sr.address}, {sr.city}, {sr.country}</p>
-                <p className="text-xs slate-950">Phone: {sr.phone}</p>
-                <p className="text-xs slate-600">Hours: {sr.hours}</p>
+              <div key={sr.id} className="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+                <h4 className="text-base font-bold text-white font-heading">{sr.name}</h4>
+                <p className="text-xs text-slate-300">{sr.address}, {sr.city}, {sr.country}</p>
+                <p className="text-xs text-white">Phone: {sr.phone}</p>
+                <p className="text-xs text-slate-400">Hours: {sr.hours}</p>
               </div>
             ))}
           </div>
@@ -514,15 +514,15 @@ export const AdminDashboardView: React.FC = () => {
       {/* LEADERSHIP TAB */}
       {activeAdminTab === 'leadership' && (
         <div className="space-y-6 animate-in fade-in duration-200">
-          <h2 className="text-xl font-bold slate-950 font-heading">CEO Leadership Profile</h2>
+          <h2 className="text-xl font-bold text-white font-heading">CEO Leadership Profile</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {leadership.map((person) => (
-              <div key={person.id} className="glass-card p-5 rounded-2xl border slate-200 flex items-center space-x-4">
-                <img src={person.image} alt={person.name} className="w-14 h-14 rounded-xl object-cover border slate-200" />
+              <div key={person.id} className="glass-card p-5 rounded-2xl border border-slate-800 flex items-center space-x-4">
+                <img src={person.image} alt={person.name} className="w-14 h-14 rounded-xl object-cover border border-slate-800" />
                 <div>
-                  <h4 className="text-base font-bold slate-950 font-heading">{person.name}</h4>
-                  <p className="text-xs slate-950 font-semibold">{person.designation}</p>
-                  <p className="text-[11px] slate-600 line-clamp-2 mt-1">{person.bio}</p>
+                  <h4 className="text-base font-bold text-white font-heading">{person.name}</h4>
+                  <p className="text-xs text-white font-semibold">{person.designation}</p>
+                  <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{person.bio}</p>
                 </div>
               </div>
             ))}
@@ -533,14 +533,14 @@ export const AdminDashboardView: React.FC = () => {
       {/* SUPPLIERS TAB */}
       {activeAdminTab === 'suppliers' && (
         <div className="space-y-6 animate-in fade-in duration-200">
-          <h2 className="text-xl font-bold slate-950 font-heading">Suppliers & Partners</h2>
+          <h2 className="text-xl font-bold text-white font-heading">Suppliers & Partners</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {suppliers.map((supplier) => (
-              <div key={supplier.id} className="glass-card p-5 rounded-2xl border slate-200 space-y-2">
-                <span className="text-[10px] font-bold slate-950 uppercase">{supplier.category}</span>
-                <h4 className="text-base font-bold slate-950 font-heading">{supplier.name}</h4>
-                <p className="text-xs slate-700">{supplier.description}</p>
-                <p className="text-[11px] slate-600">Location: {supplier.location}</p>
+              <div key={supplier.id} className="glass-card p-5 rounded-2xl border border-slate-800 space-y-2">
+                <span className="text-[10px] font-bold text-white uppercase">{supplier.category}</span>
+                <h4 className="text-base font-bold text-white font-heading">{supplier.name}</h4>
+                <p className="text-xs text-slate-300">{supplier.description}</p>
+                <p className="text-[11px] text-slate-400">Location: {supplier.location}</p>
               </div>
             ))}
           </div>
@@ -550,33 +550,33 @@ export const AdminDashboardView: React.FC = () => {
       {/* INQUIRIES MANAGER TAB */}
       {activeAdminTab === 'inquiries' && (
         <div className="space-y-6 animate-in fade-in duration-200">
-          <h2 className="text-xl font-bold slate-950 font-heading">Customer Inquiry Submissions</h2>
+          <h2 className="text-xl font-bold text-white font-heading">Customer Inquiry Submissions</h2>
           <div className="space-y-4">
             {inquiries.map((inq) => (
-              <div key={inq.id} className="glass-card p-6 rounded-2xl border slate-200 space-y-3">
+              <div key={inq.id} className="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
                 <div className="flex items-start justify-between">
                   <div>
-                    <span className="text-xs font-bold slate-950 font-heading">{inq.subject}</span>
-                    <h4 className="text-base font-bold slate-950 font-heading">{inq.name} ({inq.email})</h4>
-                    <p className="text-xs slate-600">Phone: {inq.phone || 'N/A'} • Submitted {inq.createdAt}</p>
+                    <span className="text-xs font-bold text-white font-heading">{inq.subject}</span>
+                    <h4 className="text-base font-bold text-white font-heading">{inq.name} ({inq.email})</h4>
+                    <p className="text-xs text-slate-400">Phone: {inq.phone || 'N/A'} • Submitted {inq.createdAt}</p>
                   </div>
-                  <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${inq.status === 'new' ? 'slate-950 white' : 'slate-100 slate-600'}`}>
+                  <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${inq.status === 'new' ? 'bg-white text-slate-950' : 'bg-slate-800 text-slate-400'}`}>
                     {inq.status}
                   </span>
                 </div>
-                <p className="text-xs slate-800 slate-50 p-4 rounded-xl border slate-200 whitespace-pre-wrap">
+                <p className="text-xs text-slate-200 bg-slate-950 p-4 rounded-xl border border-slate-800 whitespace-pre-wrap">
                   {inq.message}
                 </p>
                 <div className="flex items-center space-x-2 pt-2">
                   <button
                     onClick={() => updateInquiryStatus(inq.id, 'replied')}
-                    className="px-3 py-1 rounded-lg slate-950/10 slate-950 text-xs font-bold hover:slate-950/20"
+                    className="px-3 py-1 rounded-lg bg-white/10 text-white text-xs font-bold hover:bg-white/20"
                   >
                     Mark as Replied
                   </button>
                   <button
                     onClick={() => updateInquiryStatus(inq.id, 'archived')}
-                    className="px-3 py-1 rounded-lg slate-100 slate-600 text-xs font-bold hover:slate-200"
+                    className="px-3 py-1 rounded-lg bg-slate-800 text-slate-400 text-xs font-bold hover:bg-slate-700"
                   >
                     Archive
                   </button>
@@ -589,14 +589,14 @@ export const AdminDashboardView: React.FC = () => {
 
       {/* SETTINGS TAB */}
       {activeAdminTab === 'settings' && (
-        <div className="glass-card p-8 rounded-3xl border slate-200 max-w-2xl space-y-6 animate-in fade-in duration-200">
+        <div className="glass-card p-8 rounded-3xl border border-slate-800 max-w-2xl space-y-6 animate-in fade-in duration-200">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-xl font-bold slate-950 font-heading">Site & WhatsApp Configuration</h2>
-              <p className="text-xs slate-600">Manage business WhatsApp ordering number and brand meta</p>
+              <h2 className="text-xl font-bold text-white font-heading">Site & WhatsApp Configuration</h2>
+              <p className="text-xs text-slate-400">Manage business WhatsApp ordering number and brand meta</p>
             </div>
             {settingsSaved && (
-              <span className="text-xs font-bold slate-950 flex items-center gap-1">
+              <span className="text-xs font-bold text-white flex items-center gap-1">
                 <CheckCircle2 className="w-4 h-4" />
                 Settings Saved!
               </span>
@@ -605,41 +605,41 @@ export const AdminDashboardView: React.FC = () => {
 
           <form onSubmit={handleSaveSettings} className="space-y-4">
             <div>
-              <label className="block text-xs font-bold uppercase slate-700 mb-1 font-heading">
+              <label className="block text-xs font-bold uppercase text-slate-300 mb-1 font-heading">
                 Official WhatsApp Ordering Number (e.g. 923085410293)
               </label>
               <input
                 type="text"
                 value={settingsForm.whatsappNumber}
                 onChange={(e) => setSettingsForm({ ...settingsForm, whatsappNumber: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-xl white border slate-200 text-xs slate-950 font-mono font-bold"
+                className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white font-mono font-bold"
               />
               <p className="text-[11px] text-slate-500 mt-1">Formated for wa.me/ deep link: 923085410293 (03085410293).</p>
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase slate-700 mb-1 font-heading">Brand Slogan</label>
+              <label className="block text-xs font-bold uppercase text-slate-300 mb-1 font-heading">Brand Slogan</label>
               <input
                 type="text"
                 value={settingsForm.slogan}
                 onChange={(e) => setSettingsForm({ ...settingsForm, slogan: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-xl white border slate-200 text-xs slate-950"
+                className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase slate-700 mb-1 font-heading">Official Email</label>
+              <label className="block text-xs font-bold uppercase text-slate-300 mb-1 font-heading">Official Email</label>
               <input
                 type="email"
                 value={settingsForm.contactEmail}
                 onChange={(e) => setSettingsForm({ ...settingsForm, contactEmail: e.target.value })}
-                className="w-full px-4 py-2.5 rounded-xl white border slate-200 text-xs slate-950"
+                className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white"
               />
             </div>
 
             <button
               type="submit"
-              className="py-3 px-6 rounded-xl text-xs font-bold white slate-950 hover:bg-slate-300 shadow-md flex items-center space-x-2 font-heading"
+              className="py-3 px-6 rounded-xl text-xs font-bold text-slate-950 bg-white hover:bg-slate-300 shadow-md flex items-center space-x-2 font-heading"
             >
               <Save className="w-4 h-4" />
               <span>Save Configuration</span>
@@ -650,11 +650,11 @@ export const AdminDashboardView: React.FC = () => {
 
       {/* PRODUCT CREATE/EDIT MODAL */}
       {productModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 slate-50/80 backdrop-blur-md">
-          <div className="relative w-full max-w-2xl glass-panel p-6 rounded-3xl border slate-300 shadow-2xl max-h-[90vh] overflow-y-auto space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b slate-200">
-              <h3 className="text-lg font-bold slate-950 font-heading">{editingProduct ? 'Edit Product' : 'Add New Product'}</h3>
-              <button onClick={() => setProductModalOpen(false)} className="slate-600 hover:slate-950"><X className="w-5 h-5" /></button>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+          <div className="relative w-full max-w-2xl glass-panel p-6 rounded-3xl border border-slate-700 shadow-2xl max-h-[90vh] overflow-y-auto space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+              <h3 className="text-lg font-bold text-white font-heading">{editingProduct ? 'Edit Product' : 'Add New Product'}</h3>
+              <button onClick={() => setProductModalOpen(false)} className="text-slate-400 hover:text-white"><X className="w-5 h-5" /></button>
             </div>
 
             {uploadError && (
@@ -666,19 +666,19 @@ export const AdminDashboardView: React.FC = () => {
             <form onSubmit={handleSaveProduct} className="space-y-4 text-xs">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block font-bold slate-700 uppercase mb-1">Product Name</label>
-                  <input type="text" required value={productForm.name} onChange={(e) => setProductForm({ ...productForm, name: e.target.value })} className="w-full p-2.5 rounded-xl white border slate-200 slate-950" />
+                  <label className="block font-bold text-slate-300 uppercase mb-1">Product Name</label>
+                  <input type="text" required value={productForm.name} onChange={(e) => setProductForm({ ...productForm, name: e.target.value })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white" />
                 </div>
                 <div>
-                  <label className="block font-bold slate-700 uppercase mb-1">SKU Reference</label>
-                  <input type="text" required value={productForm.SKU} onChange={(e) => setProductForm({ ...productForm, SKU: e.target.value })} className="w-full p-2.5 rounded-xl white border slate-200 slate-950 font-mono" />
+                  <label className="block font-bold text-slate-300 uppercase mb-1">SKU Reference</label>
+                  <input type="text" required value={productForm.SKU} onChange={(e) => setProductForm({ ...productForm, SKU: e.target.value })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white font-mono" />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block font-bold slate-700 uppercase mb-1">Category</label>
-                  <select value={productForm.category} onChange={(e) => setProductForm({ ...productForm, category: e.target.value as any })} className="w-full p-2.5 rounded-xl white border slate-200 slate-950">
+                  <label className="block font-bold text-slate-300 uppercase mb-1">Category</label>
+                  <select value={productForm.category} onChange={(e) => setProductForm({ ...productForm, category: e.target.value as any })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white">
                     <option value="Full Length">Full Length</option>
                     <option value="Ankle Cut">Ankle Cut</option>
                     <option value="Sleeve Socks">Sleeve Socks</option>
@@ -686,24 +686,24 @@ export const AdminDashboardView: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block font-bold slate-700 uppercase mb-1">Price (Rs)</label>
-                  <input type="number" step="0.01" value={productForm.price} onChange={(e) => setProductForm({ ...productForm, price: Number(e.target.value) })} className="w-full p-2.5 rounded-xl white border slate-200 slate-950" />
+                  <label className="block font-bold text-slate-300 uppercase mb-1">Price (Rs)</label>
+                  <input type="number" step="0.01" value={productForm.price} onChange={(e) => setProductForm({ ...productForm, price: Number(e.target.value) })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white" />
                 </div>
               </div>
 
               <div>
-                <label className="block font-bold slate-700 uppercase mb-1">Short Description</label>
-                <input type="text" value={productForm.shortDescription} onChange={(e) => setProductForm({ ...productForm, shortDescription: e.target.value })} className="w-full p-2.5 rounded-xl white border slate-200 slate-950" />
+                <label className="block font-bold text-slate-300 uppercase mb-1">Short Description</label>
+                <input type="text" value={productForm.shortDescription} onChange={(e) => setProductForm({ ...productForm, shortDescription: e.target.value })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white" />
               </div>
 
               <div>
-                <label className="block font-bold slate-700 uppercase mb-1">Full Description</label>
-                <textarea rows={3} value={productForm.description} onChange={(e) => setProductForm({ ...productForm, description: e.target.value })} className="w-full p-2.5 rounded-xl white border slate-200 slate-950" />
+                <label className="block font-bold text-slate-300 uppercase mb-1">Full Description</label>
+                <textarea rows={3} value={productForm.description} onChange={(e) => setProductForm({ ...productForm, description: e.target.value })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white" />
               </div>
 
               {/* Image Upload Field */}
               <div>
-                <label className="block font-bold slate-700 uppercase mb-1">
+                <label className="block font-bold text-slate-300 uppercase mb-1">
                   Product Images ({productForm.images.length} uploaded — unlimited)
                 </label>
 
@@ -715,7 +715,7 @@ export const AdminDashboardView: React.FC = () => {
                         <img
                           src={img}
                           alt={`img-${idx}`}
-                          className="w-full h-full object-cover rounded-xl border slate-300"
+                          className="w-full h-full object-cover rounded-xl border border-slate-700"
                           onError={(e) => { (e.target as HTMLImageElement).src = '/hero-pairs.jpg'; }}
                         />
                         <button
@@ -724,13 +724,13 @@ export const AdminDashboardView: React.FC = () => {
                             ...prev,
                             images: prev.images.filter((_, i) => i !== idx),
                           }))}
-                          className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-rose-500 slate-950 text-xs flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity font-bold"
+                          className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-rose-500 text-white text-xs flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity font-bold"
                           title="Remove image"
                         >
                           ×
                         </button>
                         {idx === 0 && (
-                          <span className="absolute bottom-0 left-0 right-0 text-[9px] text-center slate-950 white font-bold rounded-b-xl">MAIN</span>
+                          <span className="absolute bottom-0 left-0 right-0 text-[9px] text-center bg-white text-slate-950 font-bold rounded-b-xl">MAIN</span>
                         )}
                       </div>
                     ))}
@@ -739,11 +739,11 @@ export const AdminDashboardView: React.FC = () => {
 
                 {/* Upload Button */}
                 <div className="flex items-center space-x-3">
-                  <label className={`px-3 py-2 rounded-xl slate-100 hover:slate-200 slate-800 font-bold text-xs flex items-center space-x-1.5 cursor-pointer border slate-300 ${uploadingImage ? 'opacity-60 cursor-not-allowed' : ''}`}>
+                  <label className={`px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs flex items-center space-x-1.5 cursor-pointer border border-slate-700 ${uploadingImage ? 'opacity-60 cursor-not-allowed' : ''}`}>
                     {uploadingImage ? (
-                      <Loader2 className="w-4 h-4 animate-spin slate-950" />
+                      <Loader2 className="w-4 h-4 animate-spin text-white" />
                     ) : (
-                      <Upload className="w-4 h-4 slate-950" />
+                      <Upload className="w-4 h-4 text-white" />
                     )}
                     <span>{uploadingImage ? 'Uploading...' : '+ Add Image'}</span>
                     <input
@@ -754,18 +754,18 @@ export const AdminDashboardView: React.FC = () => {
                       className="hidden"
                     />
                   </label>
-                  <span className="text-[11px] slate-600">Max 5MB per image · No limit on count</span>
+                  <span className="text-[11px] text-slate-400">Max 5MB per image · No limit on count</span>
                 </div>
               </div>
 
               <div className="flex items-center space-x-6 pt-2">
                 <label className="flex items-center space-x-2">
                   <input type="checkbox" checked={productForm.featured} onChange={(e) => setProductForm({ ...productForm, featured: e.target.checked })} />
-                  <span className="font-bold slate-700">Mark as Featured</span>
+                  <span className="font-bold text-slate-300">Mark as Featured</span>
                 </label>
               </div>
 
-              <button type="submit" className="w-full py-3 rounded-xl slate-950 white font-bold uppercase font-heading">
+              <button type="submit" className="w-full py-3 rounded-xl bg-white text-slate-950 font-bold uppercase font-heading">
                 Save Product
               </button>
             </form>
@@ -775,11 +775,11 @@ export const AdminDashboardView: React.FC = () => {
 
       {/* BLOG CREATE/EDIT MODAL */}
       {blogModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 slate-50/80 backdrop-blur-md">
-          <div className="relative w-full max-w-2xl glass-panel p-6 rounded-3xl border slate-300 shadow-2xl max-h-[90vh] overflow-y-auto space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b slate-200">
-              <h3 className="text-lg font-bold slate-950 font-heading">{editingBlog ? 'Edit Blog Article' : 'Create Blog Article'}</h3>
-              <button onClick={() => setBlogModalOpen(false)} className="slate-600 hover:slate-950"><X className="w-5 h-5" /></button>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+          <div className="relative w-full max-w-2xl glass-panel p-6 rounded-3xl border border-slate-700 shadow-2xl max-h-[90vh] overflow-y-auto space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
+              <h3 className="text-lg font-bold text-white font-heading">{editingBlog ? 'Edit Blog Article' : 'Create Blog Article'}</h3>
+              <button onClick={() => setBlogModalOpen(false)} className="text-slate-400 hover:text-white"><X className="w-5 h-5" /></button>
             </div>
 
             {uploadError && (
@@ -790,29 +790,29 @@ export const AdminDashboardView: React.FC = () => {
 
             <form onSubmit={handleSaveBlog} className="space-y-4 text-xs">
               <div>
-                <label className="block font-bold slate-700 uppercase mb-1">Article Title</label>
-                <input type="text" required value={blogForm.title} onChange={(e) => setBlogForm({ ...blogForm, title: e.target.value })} className="w-full p-2.5 rounded-xl white border slate-200 slate-950" />
+                <label className="block font-bold text-slate-300 uppercase mb-1">Article Title</label>
+                <input type="text" required value={blogForm.title} onChange={(e) => setBlogForm({ ...blogForm, title: e.target.value })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white" />
               </div>
 
               <div>
-                <label className="block font-bold slate-700 uppercase mb-1">Category</label>
-                <input type="text" value={blogForm.category} onChange={(e) => setBlogForm({ ...blogForm, category: e.target.value })} className="w-full p-2.5 rounded-xl white border slate-200 slate-950" />
+                <label className="block font-bold text-slate-300 uppercase mb-1">Category</label>
+                <input type="text" value={blogForm.category} onChange={(e) => setBlogForm({ ...blogForm, category: e.target.value })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white" />
               </div>
 
               <div>
-                <label className="block font-bold slate-700 uppercase mb-1">Summary</label>
-                <input type="text" value={blogForm.summary} onChange={(e) => setBlogForm({ ...blogForm, summary: e.target.value })} className="w-full p-2.5 rounded-xl white border slate-200 slate-950" />
+                <label className="block font-bold text-slate-300 uppercase mb-1">Summary</label>
+                <input type="text" value={blogForm.summary} onChange={(e) => setBlogForm({ ...blogForm, summary: e.target.value })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white" />
               </div>
 
               {/* Featured Image Upload */}
               <div>
-                <label className="block font-bold slate-700 uppercase mb-1">Featured Article Image</label>
+                <label className="block font-bold text-slate-300 uppercase mb-1">Featured Article Image</label>
                 <div className="flex items-center space-x-3 mb-2">
-                  <label className="px-3 py-2 rounded-xl slate-100 hover:slate-200 slate-800 font-bold text-xs flex items-center space-x-1.5 cursor-pointer border slate-300">
+                  <label className="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs flex items-center space-x-1.5 cursor-pointer border border-slate-700">
                     {uploadingImage ? (
-                      <Loader2 className="w-4 h-4 animate-spin slate-950" />
+                      <Loader2 className="w-4 h-4 animate-spin text-white" />
                     ) : (
-                      <Upload className="w-4 h-4 slate-950" />
+                      <Upload className="w-4 h-4 text-white" />
                     )}
                     <span>Upload Featured Image</span>
                     <input
@@ -824,15 +824,15 @@ export const AdminDashboardView: React.FC = () => {
                     />
                   </label>
                 </div>
-                <input type="text" value={blogForm.image} onChange={(e) => setBlogForm({ ...blogForm, image: e.target.value })} className="w-full p-2.5 rounded-xl white border slate-200 slate-950" placeholder="https://..." />
+                <input type="text" value={blogForm.image} onChange={(e) => setBlogForm({ ...blogForm, image: e.target.value })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white" placeholder="https://..." />
               </div>
 
               <div>
-                <label className="block font-bold slate-700 uppercase mb-1">Full Article Content</label>
-                <textarea rows={6} value={blogForm.content} onChange={(e) => setBlogForm({ ...blogForm, content: e.target.value })} className="w-full p-2.5 rounded-xl white border slate-200 slate-950" />
+                <label className="block font-bold text-slate-300 uppercase mb-1">Full Article Content</label>
+                <textarea rows={6} value={blogForm.content} onChange={(e) => setBlogForm({ ...blogForm, content: e.target.value })} className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white" />
               </div>
 
-              <button type="submit" className="w-full py-3 rounded-xl slate-950 white font-bold uppercase font-heading">
+              <button type="submit" className="w-full py-3 rounded-xl bg-white text-slate-950 font-bold uppercase font-heading">
                 Publish Blog Post
               </button>
             </form>
