@@ -86,7 +86,7 @@ export const HomeView: React.FC = () => {
             </div>
 
             {/* Feature Bullets */}
-            <div className="pt-4 grid grid-cols-3 gap-4 border-t border-slate-800/80 text-left">
+            <div className="pt-4 grid grid-cols-3 gap-4 border-t border-slate-200 text-left">
               <div>
                 <span className="text-xl sm:text-2xl font-black text-slate-950 font-heading">100%</span>
                 <p className="text-[11px] text-slate-600 font-semibold uppercase">Zero Foot Slip</p>
@@ -157,7 +157,7 @@ export const HomeView: React.FC = () => {
 
           <button
             onClick={() => setActiveTab('products')}
-            className="inline-flex items-center space-x-1.5 text-xs font-bold text-slate-950 hover:text-slate-200 font-heading group"
+            className="inline-flex items-center space-x-1.5 text-xs font-bold text-slate-950 hover:text-slate-600 font-heading group"
           >
             <span>View All Products ({products.length})</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -173,7 +173,7 @@ export const HomeView: React.FC = () => {
       </section>
 
       {/* WHY CHOOSE TS SPORTS */}
-      <section className="bg-slate-900/60 border-y border-slate-800/80 py-20 relative overflow-hidden">
+      <section className="bg-slate-50 border-y border-slate-200 py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center max-w-3xl mx-auto space-y-4">

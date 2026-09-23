@@ -116,7 +116,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         )}
 
         {/* Actions Footer */}
-        <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
+        <div className="pt-3 border-t border-slate-200 flex items-center justify-between gap-2">
           <button
             onClick={(e) => {
               e.stopPropagation();

@@ -44,7 +44,7 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300 shadow-xl">
+    <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-slate-200 transition-all duration-300 shadow-xl">
       {/* Top Notification Strip */}
       <div className="bg-gradient-to-r from-slate-50 via-white to-slate-50 text-slate-700 text-xs py-1.5 px-4 border-b border-slate-800/50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -151,7 +151,7 @@ export const Navbar: React.FC = () => {
             })}
           </div>
 
-          <div className="pt-2 border-t border-slate-800/80 space-y-2">
+          <div className="pt-2 border-t border-slate-200 space-y-2">
             <button
               onClick={openDirectWhatsApp}
               className="w-full py-3 px-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-slate-900 to-slate-700 flex items-center justify-center space-x-2 shadow-lg shadow-slate-900/20"

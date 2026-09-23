@@ -71,7 +71,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
             )}
 
             {/* Feature highlights callout */}
-            <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 space-y-2">
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-950 font-heading flex items-center gap-1.5">
                 <Zap className="w-4 h-4 fill-white" />
                 Performance Specs:

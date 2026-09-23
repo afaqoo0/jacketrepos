@@ -87,7 +87,7 @@ export const BlogsView: React.FC = () => {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-slate-950 font-heading">
+              <div className="pt-4 border-t border-slate-200 flex items-center justify-between text-xs font-bold text-slate-950 font-heading">
                 <span>Read Full Article</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>

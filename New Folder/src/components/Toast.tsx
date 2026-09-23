@@ -43,7 +43,7 @@ export const Toast: React.FC<ToastProps> = ({ toast, onClose, duration = 4000 })
         <span className="text-sm font-medium text-slate-900">{toast.message}</span>
         <button
           onClick={onClose}
-          className="p-1 rounded-lg hover:bg-slate-100 text-slate-600 hover:text-slate-200 transition-colors"
+          className="p-1 rounded-lg hover:bg-slate-100 text-slate-600 hover:text-slate-600 transition-colors"
         >
           <X className="w-4 h-4" />
         </button>

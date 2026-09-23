@@ -210,7 +210,7 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
           </div>
 
           {/* Business Info Note */}
-          <div className="flex items-start space-x-2 text-[11px] text-slate-600 bg-slate-900/60 p-3 rounded-lg border border-slate-200">
+          <div className="flex items-start space-x-2 text-[11px] text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-200">
             <ShieldAlert className="w-4 h-4 text-slate-950 flex-shrink-0 mt-0.5" />
             <span>
               Clicking "Send to WhatsApp" opens WhatsApp with your prefilled details to connect directly with TS Sports official representative at <strong>03085410293</strong>.

@@ -24,6 +24,12 @@
   .font-heading {
     font-family: var(--font-heading);
   }
+
+  /* Reset browser default blue link color */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 /* Glassmorphism Utilities */
