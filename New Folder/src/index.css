@@ -29,17 +29,17 @@
 /* Glassmorphism Utilities */
 @layer utilities {
   .glass-panel {
-    background: rgba(15, 23, 42, 0.75);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(51, 65, 85, 0.5);
+    border: 1px solid rgba(226, 232, 240, 0.5);
   }
 
   .glass-card {
-    background: rgba(15, 23, 42, 0.65);
+    background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(51, 65, 85, 0.4);
+    border: 1px solid rgba(226, 232, 240, 0.4);
   }
 }
 
@@ -51,16 +51,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #0f172a;
+    background: #f8fafc;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #334155;
+    background: #cbd5e1;
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #475569;
+    background: #94a3b8;
   }
 }
 

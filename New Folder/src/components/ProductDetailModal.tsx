@@ -20,20 +20,20 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-4xl glass-panel rounded-3xl border border-slate-700/80 shadow-2xl overflow-hidden text-slate-100 max-h-[92vh] flex flex-col">
+      <div className="relative w-full max-w-4xl glass-panel rounded-3xl border border-slate-700/80 shadow-2xl overflow-hidden text-slate-900 max-h-[92vh] flex flex-col">
         
         {/* Modal Header Bar */}
-        <div className="px-6 py-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+        <div className="px-6 py-4 bg-white border-b border-slate-200 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-white/20 text-white border border-white/30">
+            <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-900/20 text-slate-950 border border-slate-900/30">
               {product.category}
             </span>
-            <span className="text-xs font-mono text-slate-400">SKU: {product.SKU}</span>
+            <span className="text-xs font-mono text-slate-600">SKU: {product.SKU}</span>
           </div>
 
           <button
             onClick={onClose}
-            className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="p-2 rounded-xl text-slate-600 hover:text-white hover:bg-slate-100 transition-colors"
           >
             <X className="w-6 h-6" />
           </button>
@@ -44,7 +44,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
           
           {/* Left Column: Image Gallery */}
           <div className="space-y-4">
-            <div className="aspect-[4/3] rounded-2xl bg-slate-900 overflow-hidden border border-slate-800 relative group">
+            <div className="aspect-[4/3] rounded-2xl bg-white overflow-hidden border border-slate-200 relative group">
               <img
                 src={selectedImg}
                 alt={product.name}
@@ -61,7 +61,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                     key={idx}
                     onClick={() => setSelectedImg(img)}
                     className={`w-20 h-16 rounded-xl overflow-hidden border-2 transition-all flex-shrink-0 ${
-                      selectedImg === img ? 'border-white shadow-md shadow-white/10 scale-105' : 'border-slate-800 opacity-60 hover:opacity-100'
+                      selectedImg === img ? 'border-slate-950 shadow-md shadow-slate-900/20 scale-105' : 'border-slate-200 opacity-60 hover:opacity-100'
                     }`}
                   >
                     <img src={img} alt="" className="w-full h-full object-cover" />
@@ -72,11 +72,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
 
             {/* Feature highlights callout */}
             <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 space-y-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-white font-heading flex items-center gap-1.5">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-950 font-heading flex items-center gap-1.5">
                 <Zap className="w-4 h-4 fill-white" />
                 Performance Specs:
               </h4>
-              <div className="text-xs text-slate-300 space-y-1">
+              <div className="text-xs text-slate-700 space-y-1">
                 <p>• <strong>Grip Pattern:</strong> {product.gripPattern}</p>
                 <p>• <strong>Ankle Lock:</strong> Ergonomic compression band</p>
                 <p>• <strong>In-Boot Friction:</strong> Reduced by up to 98%</p>
@@ -88,13 +88,13 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
           <div className="flex flex-col justify-between space-y-6">
             <div className="space-y-4">
               <div>
-                <h2 className="text-2xl md:text-3xl font-extrabold text-white font-heading leading-tight">
+                <h2 className="text-2xl md:text-3xl font-extrabold text-slate-950 font-heading leading-tight">
                   {product.name}
                 </h2>
                 
                 {product.price && (
                   <div className="mt-3 flex items-baseline space-x-3">
-                    <span className="text-3xl font-extrabold text-white font-heading">
+                    <span className="text-3xl font-extrabold text-slate-950 font-heading">
                       Rs {product.price.toFixed(2)}
                     </span>
                     {product.originalPrice && (
@@ -102,27 +102,27 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                         Rs {product.originalPrice.toFixed(2)}
                       </span>
                     )}
-                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-white/10 text-white border border-white/20">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-900/10 text-slate-950 border border-slate-900/20">
                       Direct WhatsApp Rate
                     </span>
                   </div>
                 )}
               </div>
 
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-slate-700 leading-relaxed">
                 {product.description}
               </p>
 
               {/* Material Specs Checklist */}
               {product.materialSpecs && product.materialSpecs.length > 0 && (
                 <div className="space-y-2 pt-2">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 font-heading">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 font-heading">
                     Materials & Technology:
                   </h4>
-                  <ul className="grid grid-cols-1 gap-1.5 text-xs text-slate-300">
+                  <ul className="grid grid-cols-1 gap-1.5 text-xs text-slate-700">
                     {product.materialSpecs.map((spec, i) => (
                       <li key={i} className="flex items-center space-x-2">
-                        <Check className="w-4 h-4 text-white flex-shrink-0" />
+                        <Check className="w-4 h-4 text-slate-950 flex-shrink-0" />
                         <span>{spec}</span>
                       </li>
                     ))}
@@ -133,7 +133,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
               {/* Color options preview */}
               {product.colors && product.colors.length > 0 && (
                 <div className="space-y-1.5 pt-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-slate-300 font-heading">
+                  <label className="text-xs font-bold uppercase tracking-wider text-slate-700 font-heading">
                     Colorways Available:
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -143,8 +143,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                         onClick={() => setSelectedColor(c)}
                         className={`px-3 py-1 rounded-lg text-xs font-semibold border transition-all ${
                           selectedColor === c 
-                            ? 'bg-white text-slate-950 font-bold border-white' 
-                            : 'bg-slate-900 text-slate-300 border-slate-800'
+                            ? 'bg-slate-950 text-white font-bold border-slate-950' 
+                            : 'bg-white text-slate-700 border-slate-200'
                         }`}
                       >
                         {c}
@@ -157,7 +157,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
               {/* Size options preview */}
               {product.sizes && product.sizes.length > 0 && (
                 <div className="space-y-1.5">
-                  <label className="text-xs font-bold uppercase tracking-wider text-slate-300 font-heading">
+                  <label className="text-xs font-bold uppercase tracking-wider text-slate-700 font-heading">
                     Select Foot Size:
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -167,8 +167,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                         onClick={() => setSelectedSize(s)}
                         className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
                           selectedSize === s 
-                            ? 'bg-white text-slate-950 font-bold border-white' 
-                            : 'bg-slate-900 text-slate-300 border-slate-800'
+                            ? 'bg-slate-950 text-white font-bold border-slate-950' 
+                            : 'bg-white text-slate-700 border-slate-200'
                         }`}
                       >
                         {s}
@@ -180,17 +180,17 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
             </div>
 
             {/* Direct Order Button */}
-            <div className="pt-4 border-t border-slate-800 space-y-3">
+            <div className="pt-4 border-t border-slate-200 space-y-3">
               <button
                 onClick={handleOrderClick}
-                className="w-full py-4 px-6 rounded-2xl text-sm font-extrabold text-slate-950 bg-gradient-to-r from-white to-slate-300 hover:from-slate-200 hover:to-slate-400 shadow-xl shadow-white/10 flex items-center justify-center space-x-2 transition-all transform hover:scale-[1.01] active:scale-95"
+                className="w-full py-4 px-6 rounded-2xl text-sm font-extrabold text-white bg-gradient-to-r from-slate-900 to-slate-700 hover:from-slate-800 hover:to-slate-600 shadow-xl shadow-slate-900/20 flex items-center justify-center space-x-2 transition-all transform hover:scale-[1.01] active:scale-95"
               >
-                <MessageSquare className="w-5 h-5 fill-slate-950" />
+                <MessageSquare className="w-5 h-5 fill-white" />
                 <span>Order Now via WhatsApp (03085410293)</span>
               </button>
 
-              <p className="text-[11px] text-center text-slate-400 flex items-center justify-center gap-1">
-                <ShieldCheck className="w-4 h-4 text-white inline" />
+              <p className="text-[11px] text-center text-slate-600 flex items-center justify-center gap-1">
+                <ShieldCheck className="w-4 h-4 text-slate-950 inline" />
                 Direct WhatsApp link generates a prefilled order message. No credit card required.
               </p>
             </div>
