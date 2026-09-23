@@ -52,29 +52,29 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-xl glass-panel rounded-2xl border border-slate-700/80 shadow-2xl overflow-hidden text-slate-100 max-h-[90vh] flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 slate-50/80 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="relative w-full max-w-xl glass-panel rounded-2xl border slate-300/80 shadow-2xl overflow-hidden slate-900 max-h-[90vh] flex flex-col">
         
         {/* Modal Header */}
-        <div className="p-5 bg-gradient-to-r from-emerald-950/80 via-slate-900 to-slate-900 border-b border-slate-800 flex items-center justify-between">
+        <div className="p-5 bg-gradient-to-r from-emerald-950/80 white white border-b slate-200 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+            <div className="w-10 h-10 rounded-xl slate-950/10 border slate-900/20 flex items-center justify-center slate-950">
               <MessageSquare className="w-5 h-5 fill-white" />
             </div>
             <div>
-              <h3 className="text-lg font-extrabold font-heading text-white flex items-center gap-2">
+              <h3 className="text-lg font-extrabold font-heading slate-950 flex items-center gap-2">
                 Order via TS Sports WhatsApp
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-slate-200 font-sans border border-white/20">
+                <span className="text-[10px] px-2 py-0.5 rounded-full slate-950/10 slate-800 font-sans border slate-900/20">
                   Direct Order
                 </span>
               </h3>
-              <p className="text-xs text-slate-400">Instant product order inquiry to 03085410293</p>
+              <p className="text-xs slate-600">Instant product order inquiry to 03085410293</p>
             </div>
           </div>
 
           <button
             onClick={onClose}
-            className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="p-2 rounded-lg slate-600 hover:slate-950 hover:slate-100 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -84,17 +84,17 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
         <div className="p-6 overflow-y-auto space-y-5 flex-1">
           
           {/* Selected Product Summary */}
-          <div className="flex items-center space-x-4 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div className="flex items-center space-x-4 p-3 rounded-xl white/80 border slate-200">
             <img
               src={product.images[0] || '/hero-pairs.jpg'}
               alt={product.name}
-              className="w-16 h-16 object-cover rounded-lg border border-slate-700"
+              className="w-16 h-16 object-cover rounded-lg border slate-300"
             />
             <div className="flex-1 min-w-0">
-              <h4 className="text-sm font-bold text-white truncate font-heading">{product.name}</h4>
-              <p className="text-xs text-white font-semibold mt-0.5">SKU: {product.SKU}</p>
+              <h4 className="text-sm font-bold slate-950 truncate font-heading">{product.name}</h4>
+              <p className="text-xs slate-950 font-semibold mt-0.5">SKU: {product.SKU}</p>
               {product.price && (
-                <p className="text-xs text-slate-300 font-bold mt-1">Rs {product.price.toFixed(2)} per pair</p>
+                <p className="text-xs slate-700 font-bold mt-1">Rs {product.price.toFixed(2)} per pair</p>
               )}
             </div>
           </div>
@@ -102,7 +102,7 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
           {/* Color Selection */}
           {product.colors && product.colors.length > 0 && (
             <div>
-              <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 font-heading">
+              <label className="block text-xs font-bold slate-700 uppercase tracking-wider mb-2 font-heading">
                 Select Color Option:
               </label>
               <div className="flex flex-wrap gap-2">
@@ -112,8 +112,8 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
                     onClick={() => setSelectedColor(color)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
                       selectedColor === color
-                        ? 'bg-white text-slate-950 border-white shadow-md shadow-white/10 font-bold'
-                        : 'bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700'
+                        ? 'slate-950 white slate-950 shadow-md shadow-slate-900/20 font-bold'
+                        : 'white slate-700 slate-200 hover:slate-300'
                     }`}
                   >
                     {color}
@@ -126,7 +126,7 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
           {/* Size Selection */}
           {product.sizes && product.sizes.length > 0 && (
             <div>
-              <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 font-heading">
+              <label className="block text-xs font-bold slate-700 uppercase tracking-wider mb-2 font-heading">
                 Select Size:
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -136,8 +136,8 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
                     onClick={() => setSelectedSize(size)}
                     className={`px-3 py-2 rounded-lg text-xs font-semibold border text-center transition-all ${
                       selectedSize === size
-                        ? 'bg-white text-slate-950 border-white shadow-md shadow-white/10 font-bold'
-                        : 'bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700'
+                        ? 'slate-950 white slate-950 shadow-md shadow-slate-900/20 font-bold'
+                        : 'white slate-700 slate-200 hover:slate-300'
                     }`}
                   >
                     {size}
@@ -150,20 +150,20 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
           {/* Quantity & Notes */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1 font-heading">
+              <label className="block text-xs font-bold slate-700 uppercase tracking-wider mb-1 font-heading">
                 Quantity (Pairs):
               </label>
               <div className="flex items-center space-x-2">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 hover:bg-slate-700 font-bold"
+                  className="w-8 h-8 rounded-lg slate-100 border slate-300 slate-800 hover:slate-200 font-bold"
                 >
                   -
                 </button>
-                <span className="w-10 text-center text-sm font-bold text-white">{quantity}</span>
+                <span className="w-10 text-center text-sm font-bold slate-950">{quantity}</span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 hover:bg-slate-700 font-bold"
+                  className="w-8 h-8 rounded-lg slate-100 border slate-300 slate-800 hover:slate-200 font-bold"
                 >
                   +
                 </button>
@@ -171,7 +171,7 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
             </div>
 
             <div className="sm:col-span-2">
-              <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1 font-heading">
+              <label className="block text-xs font-bold slate-700 uppercase tracking-wider mb-1 font-heading">
                 Custom Notes / City (Optional):
               </label>
               <input
@@ -179,7 +179,7 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
                 value={customerNotes}
                 onChange={(e) => setCustomerNotes(e.target.value)}
                 placeholder="e.g. Delivery city or club logo printing..."
-                className="w-full px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-white"
+                className="w-full px-3 py-1.5 rounded-lg white border slate-200 text-xs slate-950 placeholder-slate-500 focus:outline-none focus:slate-950"
               />
             </div>
           </div>
@@ -187,31 +187,31 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
           {/* Message Preview Box */}
           <div>
             <div className="flex items-center justify-between mb-1.5">
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-wider font-heading">
+              <span className="text-xs font-bold slate-600 uppercase tracking-wider font-heading">
                 Prefilled WhatsApp Message Preview:
               </span>
               <button
                 onClick={handleCopyMessage}
-                className="text-[11px] text-white hover:underline flex items-center gap-1 font-semibold"
+                className="text-[11px] slate-950 hover:underline flex items-center gap-1 font-semibold"
               >
                 {copied ? (
                   <>
-                    <CheckCircle2 className="w-3 h-3 text-white" />
-                    <span className="text-white">Copied!</span>
+                    <CheckCircle2 className="w-3 h-3 slate-950" />
+                    <span className="slate-950">Copied!</span>
                   </>
                 ) : (
                   <span>Copy Text</span>
                 )}
               </button>
             </div>
-            <pre className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-200 font-mono whitespace-pre-wrap leading-relaxed shadow-inner">
+            <pre className="p-3.5 rounded-xl slate-50 border slate-200 text-xs slate-800 font-mono whitespace-pre-wrap leading-relaxed shadow-inner">
               {generatedMessage}
             </pre>
           </div>
 
           {/* Business Info Note */}
-          <div className="flex items-start space-x-2 text-[11px] text-slate-400 bg-slate-900/60 p-3 rounded-lg border border-slate-800">
-            <ShieldAlert className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
+          <div className="flex items-start space-x-2 text-[11px] slate-600 white/60 p-3 rounded-lg border slate-200">
+            <ShieldAlert className="w-4 h-4 slate-950 flex-shrink-0 mt-0.5" />
             <span>
               Clicking "Send to WhatsApp" opens WhatsApp with your prefilled details to connect directly with TS Sports official representative at <strong>03085410293</strong>.
             </span>
@@ -220,19 +220,19 @@ export const WhatsAppOrderModal: React.FC<WhatsAppOrderModalProps> = ({ product,
         </div>
 
         {/* Modal Footer CTA */}
-        <div className="p-4 bg-slate-900 border-t border-slate-800 flex items-center justify-between gap-3">
+        <div className="p-4 white border-t slate-200 flex items-center justify-between gap-3">
           <button
             onClick={onClose}
-            className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-colors"
+            className="px-4 py-2.5 rounded-xl slate-100 hover:slate-200 slate-700 text-xs font-semibold transition-colors"
           >
             Cancel
           </button>
           
           <button
             onClick={handleSendToWhatsApp}
-            className="flex-1 py-3 px-5 rounded-xl text-xs font-extrabold text-slate-950 bg-gradient-to-r from-white to-slate-300 hover:from-slate-200 hover:to-slate-400 shadow-lg shadow-white/10 flex items-center justify-center space-x-2 transition-all hover:scale-[1.01] active:scale-95"
+            className="flex-1 py-3 px-5 rounded-xl text-xs font-extrabold slate-950 bg-gradient-to-r white to-slate-700 hover:from-slate-800 hover:to-slate-600 shadow-lg shadow-slate-900/20 flex items-center justify-center space-x-2 transition-all hover:scale-[1.01] active:scale-95"
           >
-            <MessageSquare className="w-4 h-4 fill-slate-950" />
+            <MessageSquare className="w-4 h-4 fill-white" />
             <span>Send Order via WhatsApp</span>
             <ExternalLink className="w-3.5 h-3.5 ml-1" />
           </button>
