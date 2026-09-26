@@ -175,7 +175,7 @@ export const AdminDashboardView: React.FC = () => {
 
     const payload = {
       name: productForm.name,
-      slug: productForm.name.toLowerCase().replace(/\s+/g, '-'),
+      slug: productForm.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') + '-' + Date.now().toString(36),
       SKU: productForm.SKU,
       category: productForm.category,
       price: Number(productForm.price),
@@ -236,7 +236,7 @@ export const AdminDashboardView: React.FC = () => {
     e.preventDefault();
     const payload = {
       title: blogForm.title,
-      slug: blogForm.title.toLowerCase().replace(/\s+/g, '-'),
+      slug: blogForm.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') + '-' + Date.now().toString(36),
       summary: blogForm.summary,
       content: blogForm.content,
       author: blogForm.author,
