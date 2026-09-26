@@ -80,7 +80,7 @@ export const AdminDashboardView: React.FC = () => {
     title: '',
     summary: '',
     content: '',
-    author: 'Tufail Shinwari',
+    author: 'Kashif Shinwari',
     category: 'Sports Science',
     image: '/hero-collage.jpg',
     status: 'published' as Blog['status'],
@@ -223,7 +223,7 @@ export const AdminDashboardView: React.FC = () => {
         title: '',
         summary: '',
         content: '',
-        author: 'Tufail Shinwari',
+        author: 'Kashif Shinwari',
         category: 'Sports Science',
         image: '/hero-collage.jpg',
         status: 'published',
@@ -843,3 +843,4 @@ export const AdminDashboardView: React.FC = () => {
     </div>
   );
 };
+

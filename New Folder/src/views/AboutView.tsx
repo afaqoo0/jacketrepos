@@ -19,7 +19,7 @@ export const AboutView: React.FC = () => {
           </h1>
 
           <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-            TS Sports is a premier sports equipment and athletic apparel brand founded by CEO Tufail Shinwari. We specialize in engineering high-traction grip socks, athletic apparel, and professional team gear that eliminate foot slippage and enhance pitch agility.
+            TS Sports is a premier sports equipment and athletic apparel brand founded by CEO Kashif Shinwari. We specialize in engineering high-traction grip socks, athletic apparel, and professional team gear that eliminate foot slippage and enhance pitch agility.
           </p>
 
           <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
@@ -84,3 +84,4 @@ export const AboutView: React.FC = () => {
     </div>
   );
 };
+
