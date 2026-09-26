@@ -33,18 +33,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           loading="lazy"
         />
         
-        {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-black/20 opacity-80 group-hover:opacity-60 transition-opacity" />
+        {/* Subtle Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-transparent opacity-40" />
 
         {/* Featured / Category Badges */}
         <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
           {product.featured && (
-            <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase bg-slate-950 text-white shadow-md shadow-lime-400/30 flex items-center gap-1 font-heading">
+            <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase bg-slate-950 text-white shadow-md flex items-center gap-1 font-heading">
               <Sparkles className="w-3 h-3 fill-white" />
               Featured
             </span>
           )}
-          <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-900/90 text-slate-800 border border-slate-300 backdrop-blur-md font-heading">
+          <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/90 text-slate-900 border border-slate-300 backdrop-blur-md font-heading shadow-sm">
             {product.category}
           </span>
         </div>
@@ -82,14 +82,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
         <div>
           <div className="flex items-center justify-between text-xs text-slate-600 mb-1">
-            <span className="font-mono text-[11px] text-white/90 font-semibold">{product.SKU}</span>
+            <span className="font-mono text-[11px] text-slate-600 font-semibold">{product.SKU}</span>
             <span className="text-[10px] text-slate-950 font-semibold flex items-center gap-1">
               <Check className="w-3 h-3 text-slate-950" />
               In Stock
             </span>
           </div>
 
-          <h3 className="text-base font-bold text-slate-900 group-hover:text-white transition-colors font-heading leading-snug">
+          <h3 className="text-base font-bold text-slate-900 group-hover:text-slate-700 transition-colors font-heading leading-snug">
             {product.name}
           </h3>
 

@@ -38,10 +38,10 @@ export const HomeView: React.FC = () => {
           <img
             src="/hero-collage.jpg"
             alt="TS Sports Grip Socks"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center opacity-40"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-black/85 to-black/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/90 to-slate-50/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-transparent to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -49,7 +49,7 @@ export const HomeView: React.FC = () => {
           {/* Hero Left Content */}
           <div className="lg:col-span-7 space-y-8 text-left">
             
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-900/10 border border-slate-900/30 backdrop-blur-md">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-200/80 border border-slate-300 backdrop-blur-md">
               <Sparkles className="w-4 h-4 text-slate-950 animate-spin" />
               <span className="text-xs font-bold text-slate-950 uppercase tracking-widest font-heading">
                 Next-Gen Athletic Performance & Grip Gear
@@ -78,9 +78,9 @@ export const HomeView: React.FC = () => {
 
               <button
                 onClick={openGeneralWhatsApp}
-                className="px-8 py-4 rounded-2xl text-sm font-extrabold text-slate-950 bg-slate-900/90 hover:bg-slate-100 border border-slate-300 shadow-xl flex items-center justify-center space-x-2 transition-all transform hover:scale-[1.02] active:scale-95"
+                className="px-8 py-4 rounded-2xl text-sm font-extrabold text-slate-900 bg-white hover:bg-slate-100 border border-slate-300 shadow-xl flex items-center justify-center space-x-2 transition-all transform hover:scale-[1.02] active:scale-95"
               >
-                <MessageSquare className="w-5 h-5 fill-white text-slate-950" />
+                <MessageSquare className="w-5 h-5 text-slate-900 fill-slate-900" />
                 <span>Order on WhatsApp (03085410293)</span>
               </button>
             </div>
