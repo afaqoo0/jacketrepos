@@ -44,7 +44,7 @@ model Blog {
   summary     String
   content     String
   image       String
-  author      String   @default("Kashif Tufail")
+  author      String   @default("Kashif Shinwari")
   category    String
   status      String   @default("published")
   publishedAt DateTime @default(now())
@@ -109,3 +109,4 @@ model SiteSetting {
   value     String
   updatedAt DateTime @updatedAt
 }
+
