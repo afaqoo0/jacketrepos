@@ -4,11 +4,11 @@ import { Users, ShieldCheck, Award } from 'lucide-react';
 
 export const LeadershipView: React.FC = () => {
   const { leadership } = useStore();
-  const ceo = leadership.find((l) => l.name.toLowerCase().includes('kashif')) || leadership[0] || {
+  const ceo = leadership.find((l) => l.name.toLowerCase().includes('tufail')) || leadership[0] || {
     id: 'lead-1',
-    name: 'Kashif Shinwari',
+    name: 'Tufail Shinwari',
     designation: 'Chief Executive Officer & Founder',
-    bio: 'Visionary founder and CEO of TS Sports. Kashif Shinwari leads the brand in pioneering high-performance athletic apparel, precision grip gear, and global sporting goods innovation.',
+    bio: 'Visionary founder and CEO of TS Sports. Tufail Shinwari leads the brand in pioneering high-performance athletic apparel, precision grip gear, and global sporting goods innovation.',
     image: '/ceo.jpg',
     displayOrder: 1,
   };
@@ -93,4 +93,5 @@ export const LeadershipView: React.FC = () => {
     </div>
   );
 };
+
 
